@@ -31,10 +31,16 @@ public class SecurityConfig {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/oauth2/**").permitAll()
-                        .requestMatchers("/css/**", "/static/**", "/images/**", "/js/**").permitAll()
+                        .requestMatchers(
+                                "/api/auth/**",
+                                "/api/password/reset/**",
+                                "/auth/**",
+                                "/oauth2/**",
+                                "/css/**",
+                                "/static/**",
+                                "/images/**",
+                                "/js/**"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
