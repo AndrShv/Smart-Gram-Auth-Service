@@ -44,7 +44,7 @@ class PasswordResetServiceImplTest {
     void setUp() {
         user = User.builder()
                 .id(UUID.randomUUID())
-                .email("andrey@test.com")
+                .email("andrey678a@gmail.com")
                 .password("old-password")
                 .build();
     }
@@ -75,11 +75,11 @@ class PasswordResetServiceImplTest {
 
     @Test
     void sendResetToken_userNotFound() {
-        when(userRepository.findByEmail("unknown@test.com"))
+        when(userRepository.findByEmail("andrey678a@gmail.com"))
                 .thenReturn(Optional.empty());
 
         assertThrows(UserNotFoundByEmailException.class,
-                () -> passwordResetService.sendResetToken("unknown@test.com"));
+                () -> passwordResetService.sendResetToken("andrey678a@gmail.com"));
 
         verify(mailSender, never()).send((MimeMessage) any());
     }
