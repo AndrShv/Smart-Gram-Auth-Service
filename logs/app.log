@@ -2116,3 +2116,273 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2026-01-29T10:19:09.362+02:00  INFO 15174 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-01-29T10:19:09.364+02:00  INFO 15174 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-01-29T10:19:09.365+02:00  INFO 15174 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-29T10:28:24.105+02:00  INFO 15686 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 15686 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-29T10:28:24.105+02:00 DEBUG 15686 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-29T10:28:24.106+02:00  INFO 15686 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-29T10:28:24.119+02:00  INFO 15686 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-29T10:28:24.119+02:00  INFO 15686 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-29T10:28:24.369+02:00  INFO 15686 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-29T10:28:24.388+02:00  INFO 15686 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2026-01-29T10:28:24.643+02:00  INFO 15686 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-29T10:28:24.648+02:00  INFO 15686 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-29T10:28:24.648+02:00  INFO 15686 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-29T10:28:24.660+02:00  INFO 15686 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-29T10:28:24.660+02:00  INFO 15686 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 540 ms
+2026-01-29T10:28:24.725+02:00  INFO 15686 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-29T10:28:24.744+02:00  INFO 15686 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-29T10:28:24.755+02:00  INFO 15686 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-29T10:28:24.827+02:00  INFO 15686 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-29T10:28:24.835+02:00  INFO 15686 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-29T10:28:24.907+02:00  INFO 15686 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@801126c
+2026-01-29T10:28:24.907+02:00  INFO 15686 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-29T10:28:25.187+02:00  INFO 15686 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-29T10:28:25.206+02:00  INFO 15686 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T10:28:25.391+02:00 DEBUG 15686 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-29T10:28:25.512+02:00  WARN 15686 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-29T10:28:25.686+02:00  INFO 15686 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4ccc8f2f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60c8183b, org.springframework.security.web.context.SecurityContextHolderFilter@73fcf255, org.springframework.security.web.header.HeaderWriterFilter@2d3c1dd3, org.springframework.web.filter.CorsFilter@424c4ec8, org.springframework.security.web.authentication.logout.LogoutFilter@585b177e, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@6090cd81, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@11dcc226, com.example.project.filters.JwtFilter@56348757, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7bb24f98, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20a6cbf3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ecf34d6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35767955, org.springframework.security.web.session.SessionManagementFilter@413973ae, org.springframework.security.web.access.ExceptionTranslationFilter@171f327c, org.springframework.security.web.access.intercept.AuthorizationFilter@40d5e90a]
+2026-01-29T10:28:25.748+02:00  WARN 15686 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-01-29T10:28:25.833+02:00  INFO 15686 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-29T10:28:25.843+02:00  INFO 15686 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-29T10:28:25.846+02:00  INFO 15686 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.866 seconds (process running for 2.018)
+2026-01-29T10:28:29.708+02:00  INFO 15686 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-29T10:28:29.709+02:00  INFO 15686 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-29T10:28:29.710+02:00  INFO 15686 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-29T10:28:29.716+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/password/reset/request
+2026-01-29T10:28:29.718+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /api/password/reset/request, shouldNotFilter: true
+2026-01-29T10:28:29.719+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-29T10:28:29.719+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/password/reset/request
+2026-01-29T10:28:29.719+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /api/password/reset/request, shouldNotFilter: true
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    : ┌──▶ ВХОД: PasswordResetRestController.requestResetToken
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    : │ Параметры:
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.p.rest.PasswordResetRestController   : REST: Запрос на сброс пароля для email=andrey@test.com
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : ┌─────────────────────────────────────────────────
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │ ➤ ВХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-01-29T10:28:29.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │   • email = andrey@test.com
+2026-01-29T10:28:29.769+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    :   ┌──▶ ВХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:28:29.769+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    :   │ Параметры:
+2026-01-29T10:28:29.769+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    :   │   • email = String andrey@test.com
+2026-01-29T10:28:29.769+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.p.service.PasswordResetServiceImpl   : Попытка сгенерировать и отправить токен для сброса пароля на email: andrey@test.com
+2026-01-29T10:28:29.806+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.email=?
+2026-01-29T10:28:29.825+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] org.hibernate.SQL                        : update users set is_active=?,created_at=?,email=?,password=?,reset_token=?,reset_token_created_at=?,role=?,updated_at=?,username=? where id=?
+2026-01-29T10:28:29.833+02:00 DEBUG 15686 --- [http-nio-8081-exec-1] c.e.p.service.PasswordResetServiceImpl   : Для пользователя andrey@test.com сохранён одноразовый токен сброса: 648666
+2026-01-29T10:28:31.759+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.p.service.PasswordResetServiceImpl   : ✅ Код для сброса пароля успешно отправлен на: andrey@test.com
+2026-01-29T10:28:31.760+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    :   │ ✓ УСПЕШНО: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:28:31.760+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    :   │ Результат: String 648666
+2026-01-29T10:28:31.760+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    :   │ ⏱ Время: 1991 мс
+2026-01-29T10:28:31.760+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    :   └──▶ ВЫХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:28:31.760+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │
+2026-01-29T10:28:31.761+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:28:31.761+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │ Результат: 648666
+2026-01-29T10:28:31.761+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 1992 мс
+2026-01-29T10:28:31.761+02:00  WARN 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : │ ⚠ ВНИМАНИЕ: медленное выполнение!
+2026-01-29T10:28:31.761+02:00  INFO 15686 --- [http-nio-8081-exec-1] c.e.project.log.DetailedLoggingAspect    : └─────────────────────────────────────────────────
+2026-01-29T10:28:31.764+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    : │ ✓ УСПЕШНО: PasswordResetRestController.requestResetToken
+2026-01-29T10:28:31.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    : │ Результат: ResponseEntity <200 OK OK,Код для сброса пароля отправлен на email,[]>
+2026-01-29T10:28:31.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    : │ ⏱ Время: 1996 мс
+2026-01-29T10:28:31.768+02:00  INFO 15686 --- [http-nio-8081-exec-1] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: PasswordResetRestController.requestResetToken
+2026-01-29T10:28:55.321+02:00  INFO 15686 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T10:28:55.323+02:00  INFO 15686 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-29T10:28:55.324+02:00  INFO 15686 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-29T10:30:26.438+02:00  INFO 15785 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 15785 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-29T10:30:26.438+02:00 DEBUG 15785 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-29T10:30:26.439+02:00  INFO 15785 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-29T10:30:26.453+02:00  INFO 15785 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-29T10:30:26.453+02:00  INFO 15785 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-29T10:30:26.694+02:00  INFO 15785 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-29T10:30:26.713+02:00  INFO 15785 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2026-01-29T10:30:26.968+02:00  INFO 15785 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-29T10:30:26.973+02:00  INFO 15785 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-29T10:30:26.973+02:00  INFO 15785 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-29T10:30:26.985+02:00  INFO 15785 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-29T10:30:26.986+02:00  INFO 15785 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 532 ms
+2026-01-29T10:30:27.047+02:00  INFO 15785 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-29T10:30:27.066+02:00  INFO 15785 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-29T10:30:27.077+02:00  INFO 15785 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-29T10:30:27.148+02:00  INFO 15785 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-29T10:30:27.156+02:00  INFO 15785 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-29T10:30:27.224+02:00  INFO 15785 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a4f7763
+2026-01-29T10:30:27.227+02:00  INFO 15785 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-29T10:30:27.517+02:00  INFO 15785 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-29T10:30:27.533+02:00  INFO 15785 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T10:30:27.718+02:00 DEBUG 15785 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-29T10:30:27.840+02:00  WARN 15785 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-29T10:30:28.007+02:00  INFO 15785 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@301eb73e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ad3e745, org.springframework.security.web.context.SecurityContextHolderFilter@4a23f839, org.springframework.security.web.header.HeaderWriterFilter@3cd2ab44, org.springframework.web.filter.CorsFilter@445566db, org.springframework.security.web.authentication.logout.LogoutFilter@c9fcad0, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@514d9631, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@6df66c7c, com.example.project.filters.JwtFilter@2a560be6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b70c98c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70b0e89f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46296108, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a9e67a1, org.springframework.security.web.session.SessionManagementFilter@16076ac2, org.springframework.security.web.access.ExceptionTranslationFilter@430904e1, org.springframework.security.web.access.intercept.AuthorizationFilter@745ed035]
+2026-01-29T10:30:28.077+02:00  WARN 15785 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-01-29T10:30:28.167+02:00  INFO 15785 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-29T10:30:28.178+02:00  INFO 15785 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-29T10:30:28.181+02:00  INFO 15785 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.872 seconds (process running for 2.059)
+2026-01-29T10:30:32.105+02:00  INFO 15785 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-29T10:30:32.105+02:00  INFO 15785 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-29T10:30:32.107+02:00  INFO 15785 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-01-29T10:30:32.113+02:00 DEBUG 15785 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-01-29T10:30:32.114+02:00 DEBUG 15785 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /api/auth/register, shouldNotFilter: true
+2026-01-29T10:30:32.115+02:00 DEBUG 15785 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-29T10:30:32.116+02:00 DEBUG 15785 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2026-01-29T10:30:32.116+02:00 DEBUG 15785 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /api/auth/register, shouldNotFilter: true
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    : ┌──▶ ВХОД: AuthRestController.register
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    : │ Параметры:
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : ┌─────────────────────────────────────────────────
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │ ➤ ВХОД: AuthServiceImpl.registerUser
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   ┌──▶ ВХОД: AuthServiceImpl.registerUser
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   │ Параметры:
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   │   • dto = [PROTECTED]
+2026-01-29T10:30:32.163+02:00  INFO 15785 --- [http-nio-8081-exec-2] c.e.project.service.AuthServiceImpl      : Регистрация пользователя: andrey678a@gmail.com
+2026-01-29T10:30:32.193+02:00 DEBUG 15785 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : select u1_0.id from users u1_0 where u1_0.email=? limit ?
+2026-01-29T10:30:32.274+02:00 DEBUG 15785 --- [http-nio-8081-exec-2] org.hibernate.SQL                        : insert into users (is_active,created_at,email,password,reset_token,reset_token_created_at,role,updated_at,username,id) values (?,?,?,?,?,?,?,?,?,?)
+2026-01-29T10:30:32.290+02:00  WARN 15785 --- [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2026-01-29T10:30:32.290+02:00 ERROR 15785 --- [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'Andrey' for key 'users.UK_r43af9ap4edm43mmtq01oddj6'
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   │ ✗ ОШИБКА: AuthServiceImpl.registerUser
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   │ Исключение: DataIntegrityViolationException
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   │ Сообщение: could not execute statement [Duplicate entry 'Andrey' for key 'users.UK_r43af9ap4edm43mmtq01oddj6'] [insert into users (is_active,created_at,email,password,reset_token,reset_token_created_at,role,updated_at,username,id) values (?,?,?,?,?,?,?,?,?,?)]; SQL [insert into users (is_active,created_at,email,password,reset_token,reset_token_created_at,role,updated_at,username,id) values (?,?,?,?,?,?,?,?,?,?)]; constraint [users.UK_r43af9ap4edm43mmtq01oddj6]
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   │ ⏱ Время до ошибки: 132 мс
+2026-01-29T10:30:32.295+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    :   └──▶ ВЫХОД: AuthServiceImpl.registerUser
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │ ✗ ОШИБКА: AuthServiceImpl.registerUser
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │ Исключение: DataIntegrityViolationException
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │ Сообщение: could not execute statement [Duplicate entry 'Andrey' for key 'users.UK_r43af9ap4edm43mmtq01oddj6'] [insert into users (is_active,created_at,email,password,reset_token,reset_token_created_at,role,updated_at,username,id) values (?,?,?,?,?,?,?,?,?,?)]; SQL [insert into users (is_active,created_at,email,password,reset_token,reset_token_created_at,role,updated_at,username,id) values (?,?,?,?,?,?,?,?,?,?)]; constraint [users.UK_r43af9ap4edm43mmtq01oddj6]
+2026-01-29T10:30:32.295+02:00 ERROR 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время до ошибки: 132 мс
+2026-01-29T10:30:32.295+02:00  INFO 15785 --- [http-nio-8081-exec-2] c.e.project.log.DetailedLoggingAspect    : └─────────────────────────────────────────────────
+2026-01-29T10:30:32.296+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.register
+2026-01-29T10:30:32.296+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
+2026-01-29T10:30:32.296+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    : │ ⏱ Время: 133 мс
+2026-01-29T10:30:32.296+02:00  INFO 15785 --- [http-nio-8081-exec-2] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: AuthRestController.register
+2026-01-29T10:37:37.055+02:00 DEBUG 15785 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-01-29T10:37:37.057+02:00 DEBUG 15785 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /api/auth/register, shouldNotFilter: true
+2026-01-29T10:37:37.058+02:00 DEBUG 15785 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-29T10:37:37.058+02:00 DEBUG 15785 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+2026-01-29T10:37:37.059+02:00 DEBUG 15785 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /api/auth/register, shouldNotFilter: true
+2026-01-29T10:37:37.064+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    : ┌──▶ ВХОД: AuthRestController.register
+2026-01-29T10:37:37.065+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    : │ Параметры:
+2026-01-29T10:37:37.065+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:37:37.065+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : ┌─────────────────────────────────────────────────
+2026-01-29T10:37:37.066+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : │ ➤ ВХОД: AuthServiceImpl.registerUser
+2026-01-29T10:37:37.066+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-01-29T10:37:37.066+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:37:37.066+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    :   ┌──▶ ВХОД: AuthServiceImpl.registerUser
+2026-01-29T10:37:37.066+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    :   │ Параметры:
+2026-01-29T10:37:37.066+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    :   │   • dto = [PROTECTED]
+2026-01-29T10:37:37.066+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.service.AuthServiceImpl      : Регистрация пользователя: andrey678a@gmail.com
+2026-01-29T10:37:37.070+02:00 DEBUG 15785 --- [http-nio-8081-exec-3] org.hibernate.SQL                        : select u1_0.id from users u1_0 where u1_0.email=? limit ?
+2026-01-29T10:37:37.167+02:00 DEBUG 15785 --- [http-nio-8081-exec-3] org.hibernate.SQL                        : insert into users (is_active,created_at,email,password,reset_token,reset_token_created_at,role,updated_at,username,id) values (?,?,?,?,?,?,?,?,?,?)
+2026-01-29T10:37:37.175+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.service.AuthServiceImpl      : Пользователь сохранен: andrey678a@gmail.com
+2026-01-29T10:37:37.175+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    :   │ ✓ УСПЕШНО: AuthServiceImpl.registerUser
+2026-01-29T10:37:37.175+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    :   │ Результат: void/null
+2026-01-29T10:37:37.175+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    :   │ ⏱ Время: 109 мс
+2026-01-29T10:37:37.175+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    :   └──▶ ВЫХОД: AuthServiceImpl.registerUser
+2026-01-29T10:37:37.175+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : │
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthServiceImpl.registerUser
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : │ Результат: void/null
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 110 мс
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] c.e.project.log.DetailedLoggingAspect    : └─────────────────────────────────────────────────
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.register
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    : │ Результат: ResponseEntity <200 OK OK,Пользователь успешно зарегистрирован,[]>
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    : │ ⏱ Время: 112 мс
+2026-01-29T10:37:37.176+02:00  INFO 15785 --- [http-nio-8081-exec-3] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: AuthRestController.register
+2026-01-29T10:37:48.334+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/password/reset/request
+2026-01-29T10:37:48.334+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /api/password/reset/request, shouldNotFilter: true
+2026-01-29T10:37:48.334+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-29T10:37:48.334+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/password/reset/request
+2026-01-29T10:37:48.334+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /api/password/reset/request, shouldNotFilter: true
+2026-01-29T10:37:48.346+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : ┌──▶ ВХОД: PasswordResetRestController.requestResetToken
+2026-01-29T10:37:48.346+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ Параметры:
+2026-01-29T10:37:48.346+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.p.rest.PasswordResetRestController   : REST: Запрос на сброс пароля для email=andrey678a@gmail.com
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : ┌─────────────────────────────────────────────────
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ➤ ВХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │   • email = andrey678a@gmail.com
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    :   ┌──▶ ВХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    :   │ Параметры:
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    :   │   • email = String andrey678a@gmail.com
+2026-01-29T10:37:48.347+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.p.service.PasswordResetServiceImpl   : Попытка сгенерировать и отправить токен для сброса пароля на email: andrey678a@gmail.com
+2026-01-29T10:37:48.363+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.email=?
+2026-01-29T10:37:48.375+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] org.hibernate.SQL                        : update users set is_active=?,created_at=?,email=?,password=?,reset_token=?,reset_token_created_at=?,role=?,updated_at=?,username=? where id=?
+2026-01-29T10:37:48.380+02:00 DEBUG 15785 --- [http-nio-8081-exec-5] c.e.p.service.PasswordResetServiceImpl   : Для пользователя andrey678a@gmail.com сохранён одноразовый токен сброса: 327276
+2026-01-29T10:37:50.249+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.p.service.PasswordResetServiceImpl   : ✅ Код для сброса пароля успешно отправлен на: andrey678a@gmail.com
+2026-01-29T10:37:50.250+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    :   │ ✓ УСПЕШНО: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:37:50.250+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    :   │ Результат: String 327276
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    :   │ ⏱ Время: 1903 мс
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    :   └──▶ ВЫХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: PasswordResetServiceImpl.sendResetToken
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Результат: 327276
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 1904 мс
+2026-01-29T10:37:50.251+02:00  WARN 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ⚠ ВНИМАНИЕ: медленное выполнение!
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : └─────────────────────────────────────────────────
+2026-01-29T10:37:50.251+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ ✓ УСПЕШНО: PasswordResetRestController.requestResetToken
+2026-01-29T10:37:50.252+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ Результат: ResponseEntity <200 OK OK,Код для сброса пароля отправлен на email,[]>
+2026-01-29T10:37:50.252+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ ⏱ Время: 1905 мс
+2026-01-29T10:37:50.252+02:00  INFO 15785 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: PasswordResetRestController.requestResetToken
+2026-01-29T10:38:12.931+02:00 DEBUG 15785 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/password/reset/confirm
+2026-01-29T10:38:12.933+02:00 DEBUG 15785 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /api/password/reset/confirm, shouldNotFilter: true
+2026-01-29T10:38:12.934+02:00 DEBUG 15785 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-29T10:38:12.934+02:00 DEBUG 15785 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/password/reset/confirm
+2026-01-29T10:38:12.934+02:00 DEBUG 15785 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /api/password/reset/confirm, shouldNotFilter: true
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    : ┌──▶ ВХОД: PasswordResetRestController.confirmResetPassword
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    : │ Параметры:
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.p.rest.PasswordResetRestController   : REST: Попытка сброса пароля по токену
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : ┌─────────────────────────────────────────────────
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ➤ ВХОД: PasswordResetServiceImpl.resetPassword
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │   • token = [PROTECTED]
+2026-01-29T10:38:12.942+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │   • newPassword = [PROTECTED]
+2026-01-29T10:38:12.943+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   ┌──▶ ВХОД: PasswordResetServiceImpl.resetPassword
+2026-01-29T10:38:12.943+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   │ Параметры:
+2026-01-29T10:38:12.943+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   │   • token = [PROTECTED]
+2026-01-29T10:38:12.943+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   │   • newPassword = [PROTECTED]
+2026-01-29T10:38:12.943+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.p.service.PasswordResetServiceImpl   : Попытка сбросить пароль с использованием токена: 327276
+2026-01-29T10:38:12.946+02:00 DEBUG 15785 --- [http-nio-8081-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.reset_token=?
+2026-01-29T10:38:13.039+02:00 DEBUG 15785 --- [http-nio-8081-exec-6] org.hibernate.SQL                        : update users set is_active=?,created_at=?,email=?,password=?,reset_token=?,reset_token_created_at=?,role=?,updated_at=?,username=? where id=?
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.p.service.PasswordResetServiceImpl   : Пароль успешно обновлен для пользователя: andrey678a@gmail.com
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   │ ✓ УСПЕШНО: PasswordResetServiceImpl.resetPassword
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   │ Результат: void/null
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   │ ⏱ Время: 102 мс
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    :   └──▶ ВЫХОД: PasswordResetServiceImpl.resetPassword
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: PasswordResetServiceImpl.resetPassword
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Результат: void/null
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 103 мс
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : └─────────────────────────────────────────────────
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    : │ ✓ УСПЕШНО: PasswordResetRestController.confirmResetPassword
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    : │ Результат: ResponseEntity <200 OK OK,Пароль успешно изменён,[]>
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    : │ ⏱ Время: 103 мс
+2026-01-29T10:38:13.045+02:00  INFO 15785 --- [http-nio-8081-exec-6] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: PasswordResetRestController.confirmResetPassword
+2026-01-29T10:38:27.166+02:00 DEBUG 15785 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-01-29T10:38:27.168+02:00 DEBUG 15785 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /api/auth/login, shouldNotFilter: true
+2026-01-29T10:38:27.168+02:00 DEBUG 15785 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-29T10:38:27.168+02:00 DEBUG 15785 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2026-01-29T10:38:27.172+02:00 DEBUG 15785 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /api/auth/login, shouldNotFilter: true
+2026-01-29T10:38:27.181+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    : ┌──▶ ВХОД: AuthRestController.login
+2026-01-29T10:38:27.182+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    : │ Параметры:
+2026-01-29T10:38:27.182+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌─────────────────────────────────────────────────
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ➤ ВХОД: AuthServiceImpl.loginUser
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • dto = [PROTECTED]
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    :   ┌──▶ ВХОД: AuthServiceImpl.loginUser
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    :   │ Параметры:
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    :   │   • dto = [PROTECTED]
+2026-01-29T10:38:27.183+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.service.AuthServiceImpl      : Попытка входа: andrey678a@gmail.com
+2026-01-29T10:38:27.185+02:00 DEBUG 15785 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.email=?
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    :   │ ✓ УСПЕШНО: AuthServiceImpl.loginUser
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    :   │ Результат: UserResponseDTO [PROTECTED]
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    :   │ ⏱ Время: 137 мс
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    :   └──▶ ВЫХОД: AuthServiceImpl.loginUser
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthServiceImpl.loginUser
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: UserResponseDTO [PROTECTED]
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 137 мс
+2026-01-29T10:38:27.320+02:00  INFO 15785 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └─────────────────────────────────────────────────
+2026-01-29T10:38:27.321+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.login
+2026-01-29T10:38:27.321+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
+2026-01-29T10:38:27.321+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    : │ ⏱ Время: 140 мс
+2026-01-29T10:38:27.321+02:00  INFO 15785 --- [http-nio-8081-exec-7] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: AuthRestController.login
+2026-01-29T10:38:34.271+02:00  INFO 15785 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-29T10:38:34.273+02:00  INFO 15785 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-29T10:38:34.275+02:00  INFO 15785 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
