@@ -105,13 +105,20 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getRequestURI();
-        boolean shouldSkip = path.startsWith("/auth/") ||
-                path.startsWith("/oauth2/") ||
-                path.startsWith("/css/") ||
-                path.startsWith("/static/") ||
-                path.startsWith("/images/");
+
+        boolean shouldSkip =
+                path.startsWith("/api/auth/") ||
+                        path.startsWith("/api/password/reset/") ||
+                        path.startsWith("/auth/") ||
+                        path.startsWith("/oauth2/") ||
+                        path.startsWith("/css/") ||
+                        path.startsWith("/static/") ||
+                        path.startsWith("/images/") ||
+                        path.startsWith("/js/");
+
 
         log.debug("Path: {}, shouldNotFilter: {}", path, shouldSkip);
         return shouldSkip;
     }
+
 }
