@@ -116,6 +116,7 @@ public class JwtFilter extends OncePerRequestFilter {
                         path.startsWith("/images/") ||
                         path.startsWith("/js/");
 
+
         log.debug("Path: {}, shouldNotFilter: {}", path, shouldSkip);
         return shouldSkip;
     }
