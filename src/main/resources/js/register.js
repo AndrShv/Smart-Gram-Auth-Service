@@ -230,3 +230,245 @@
         googleRegisterBtn.addEventListener('click', () => {
             window.location.href = '/oauth2/authorization/google';
         });
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+     // Элементы формы
+     const form = document.getElementById('registerForm');
+     const username = document.getElementById('username');
+     const email = document.getElementById('email');
+     const password = document.getElementById('password');
+     const confirmPassword = document.getElementById('confirmPassword');
+     const loading = document.getElementById('loading');
+     const errorAlert = document.getElementById('errorAlert');
+     const successAlert = document.getElementById('successAlert');
+
+     // Элементы индикатора силы пароля
+     const passwordStrength = document.getElementById('passwordStrength');
+     const passwordStrengthBar = document.getElementById('passwordStrengthBar');
+     const passwordStrengthText = document.getElementById('passwordStrengthText');
+
+     // Создание дополнительных комет динамически
+     createComets();
+
+     // Валидация в реальном времени
+     username.addEventListener('input', function() {
+         validateUsername();
+     });
+
+     email.addEventListener('input', function() {
+         validateEmail();
+     });
+
+     password.addEventListener('input', function() {
+         validatePassword();
+         checkPasswordStrength();
+     });
+
+     confirmPassword.addEventListener('input', function() {
+         validateConfirmPassword();
+     });
+
+     // Обработка отправки формы
+     form.addEventListener('submit', function(e) {
+         e.preventDefault();
+
+         // Скрываем предыдущие сообщения
+         hideAlerts();
+
+         // Валидация всех полей
+         const isUsernameValid = validateUsername();
+         const isEmailValid = validateEmail();
+         const isPasswordValid = validatePassword();
+         const isConfirmPasswordValid = validateConfirmPassword();
+
+         if (isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+             // Показываем загрузку
+             loading.classList.add('show');
+
+             // Отправляем форму (симуляция)
+             setTimeout(() => {
+                 form.submit();
+             }, 1000);
+         } else {
+             showError('Пожалуйста, исправьте ошибки в форме');
+         }
+     });
+
+     // Функции валидации
+     function validateUsername() {
+         const usernameError = document.getElementById('usernameError');
+         const value = username.value.trim();
+
+         if (value === '') {
+             showFieldError(username, usernameError, 'Имя пользователя обязательно');
+             return false;
+         } else if (value.length < 3) {
+             showFieldError(username, usernameError, 'Минимум 3 символа');
+             return false;
+         } else {
+             hideFieldError(username, usernameError);
+             return true;
+         }
+     }
+
+     function validateEmail() {
+         const emailError = document.getElementById('emailError');
+         const value = email.value.trim();
+         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+         if (value === '') {
+             showFieldError(email, emailError, 'Email обязателен');
+             return false;
+         } else if (!emailRegex.test(value)) {
+             showFieldError(email, emailError, 'Введите корректный email');
+             return false;
+         } else {
+             hideFieldError(email, emailError);
+             return true;
+         }
+     }
+
+     function validatePassword() {
+         const passwordError = document.getElementById('passwordError');
+         const value = password.value;
+
+         if (value === '') {
+             showFieldError(password, passwordError, 'Пароль обязателен');
+             return false;
+         } else if (value.length < 6) {
+             showFieldError(password, passwordError, 'Минимум 6 символов');
+             return false;
+         } else {
+             hideFieldError(password, passwordError);
+             return true;
+         }
+     }
+
+     function validateConfirmPassword() {
+         const confirmPasswordError = document.getElementById('confirmPasswordError');
+         const value = confirmPassword.value;
+
+         if (value === '') {
+             showFieldError(confirmPassword, confirmPasswordError, 'Подтвердите пароль');
+             return false;
+         } else if (value !== password.value) {
+             showFieldError(confirmPassword, confirmPasswordError, 'Пароли не совпадают');
+             return false;
+         } else {
+             hideFieldError(confirmPassword, confirmPasswordError);
+             return true;
+         }
+     }
+
+     function checkPasswordStrength() {
+         const value = password.value;
+         let strength = 0;
+         let strengthText = '';
+         let strengthColor = '';
+
+         if (value.length === 0) {
+             passwordStrength.classList.remove('show');
+             passwordStrengthText.classList.remove('show');
+             return;
+         }
+
+         passwordStrength.classList.add('show');
+         passwordStrengthText.classList.add('show');
+
+         // Проверка длины
+         if (value.length >= 6) strength += 25;
+         if (value.length >= 10) strength += 25;
+
+         // Проверка на наличие цифр
+         if (/\d/.test(value)) strength += 25;
+
+         // Проверка на наличие спецсимволов
+         if (/[!@#$%^&*(),.?":{}|<>]/.test(value)) strength += 25;
+
+         // Установка цвета и текста
+         if (strength <= 25) {
+             strengthText = 'Слабый пароль';
+             strengthColor = '#ff4757';
+         } else if (strength <= 50) {
+             strengthText = 'Средний пароль';
+             strengthColor = '#ffa502';
+         } else if (strength <= 75) {
+             strengthText = 'Хороший пароль';
+             strengthColor = '#00d4ff';
+         } else {
+             strengthText = 'Отличный пароль';
+             strengthColor = '#2ed573';
+         }
+
+         passwordStrengthBar.style.width = strength + '%';
+         passwordStrengthBar.style.background = strengthColor;
+         passwordStrengthText.textContent = strengthText;
+         passwordStrengthText.style.color = strengthColor;
+     }
+
+     function showFieldError(field, errorElement, message) {
+         field.classList.add('error');
+         errorElement.textContent = message;
+         errorElement.classList.add('show');
+     }
+
+     function hideFieldError(field, errorElement) {
+         field.classList.remove('error');
+         errorElement.classList.remove('show');
+     }
+
+     function showError(message) {
+         errorAlert.textContent = message;
+         errorAlert.classList.add('show');
+         setTimeout(() => {
+             errorAlert.classList.remove('show');
+         }, 5000);
+     }
+
+     function showSuccess(message) {
+         successAlert.textContent = message;
+         successAlert.classList.add('show');
+         setTimeout(() => {
+             successAlert.classList.remove('show');
+         }, 5000);
+     }
+
+     function hideAlerts() {
+         errorAlert.classList.remove('show');
+         successAlert.classList.remove('show');
+     }
+
+     // Создание дополнительных комет
+     function createComets() {
+         const cometsContainer = document.querySelector('.comets');
+         const cometCount = 5;
+
+         for (let i = 0; i < cometCount; i++) {
+             const comet = document.createElement('div');
+             comet.className = 'comet-trail';
+             comet.style.cssText = `
+                 position: absolute;
+                 width: 2px;
+                 height: 2px;
+                 background: #fff;
+                 border-radius: 50%;
+                 box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+                 top: ${Math.random() * 100}%;
+                 left: ${Math.random() * 100}%;
+                 animation: comet ${8 + Math.random() * 4}s linear infinite;
+                 animation-delay: ${Math.random() * 8}s;
+             `;
+             cometsContainer.appendChild(comet);
+         }
+     }
+
+     // Проверка URL параметров для отображения ошибок
+     const urlParams = new URLSearchParams(window.location.search);
+     if (urlParams.get('error')) {
+         showError('Ошибка регистрации. Попробуйте снова.');
+     }
+     if (urlParams.get('success')) {
+         showSuccess('Регистрация успешна! Проверьте email для активации.');
+     }
+ });

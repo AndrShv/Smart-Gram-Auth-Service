@@ -1,12 +1,5 @@
- // Проверка URL параметров для отображения ошибок
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('error')) {
-        showError('Неверный email или пароль');
-    }
-    if (urlParams.get('registered')) {
-        // Можно добавить успешное сообщение о регистрации
-    }
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Элементы формы
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
@@ -14,7 +7,9 @@
     const passwordError = document.getElementById('passwordError');
     const errorAlert = document.getElementById('errorAlert');
     const loading = document.getElementById('loading');
-    const googleLoginBtn = document.getElementById('googleLoginBtn');
+
+    // Создание дополнительных комет динамически
+    createComets();
 
     // Валидация email
     function validateEmail(email) {
@@ -31,7 +26,7 @@
         }, 5000);
     }
 
-    // Валидация формы
+    // Валидация email поля
     emailInput.addEventListener('blur', () => {
         if (!validateEmail(emailInput.value) && emailInput.value) {
             emailInput.classList.add('error');
@@ -42,6 +37,7 @@
         }
     });
 
+    // Валидация пароля поля
     passwordInput.addEventListener('blur', () => {
         if (passwordInput.value.length < 6 && passwordInput.value) {
             passwordInput.classList.add('error');
@@ -52,6 +48,17 @@
         }
     });
 
+    // Убрать ошибки при вводе
+    emailInput.addEventListener('input', () => {
+        emailInput.classList.remove('error');
+        emailError.classList.remove('show');
+    });
+
+    passwordInput.addEventListener('input', () => {
+        passwordInput.classList.remove('error');
+        passwordError.classList.remove('show');
+    });
+
     // Отправка формы
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -60,15 +67,22 @@
         const password = passwordInput.value;
 
         // Валидация
+        let hasError = false;
+
         if (!validateEmail(email)) {
             emailInput.classList.add('error');
             emailError.classList.add('show');
-            return;
+            hasError = true;
         }
 
         if (password.length < 6) {
             passwordInput.classList.add('error');
             passwordError.classList.add('show');
+            hasError = true;
+        }
+
+        if (hasError) {
+            showError('Пожалуйста, исправьте ошибки в форме');
             return;
         }
 
@@ -110,18 +124,51 @@
         }
     });
 
-    // Вход через Google
-    googleLoginBtn.addEventListener('click', () => {
-        window.location.href = '/oauth2/authorization/google';
-    });
+    // Создание дополнительных комет
+    function createComets() {
+        const cometsContainer = document.querySelector('.comets');
+        if (!cometsContainer) return;
 
-    // Убрать ошибки при вводе
-    emailInput.addEventListener('input', () => {
-        emailInput.classList.remove('error');
-        emailError.classList.remove('show');
-    });
+        const cometCount = 5;
 
-    passwordInput.addEventListener('input', () => {
-        passwordInput.classList.remove('error');
-        passwordError.classList.remove('show');
-    });
+        for (let i = 0; i < cometCount; i++) {
+            const comet = document.createElement('div');
+            comet.className = 'comet-trail';
+            comet.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: #fff;
+                border-radius: 50%;
+                box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+                top: ${Math.random() * 100}%;
+                left: ${Math.random() * 100}%;
+                animation: comet ${8 + Math.random() * 4}s linear infinite;
+                animation-delay: ${Math.random() * 8}s;
+            `;
+            cometsContainer.appendChild(comet);
+        }
+    }
+
+    // Проверка URL параметров для отображения ошибок
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('error')) {
+        showError('Неверный email или пароль');
+    }
+    if (urlParams.get('registered')) {
+        // Можно добавить успешное сообщение о регистрации
+        const successAlert = document.createElement('div');
+        successAlert.className = 'alert alert-success show';
+        successAlert.style.cssText = `
+            background: rgba(46, 213, 115, 0.15);
+            color: #2ed573;
+            border-color: #2ed573;
+        `;
+        successAlert.textContent = 'Регистрация успешна! Теперь вы можете войти.';
+        errorAlert.parentNode.insertBefore(successAlert, errorAlert);
+
+        setTimeout(() => {
+            successAlert.classList.remove('show');
+        }, 5000);
+    }
+});

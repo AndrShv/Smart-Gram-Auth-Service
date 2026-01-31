@@ -9,9 +9,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+<!-- Космический фон -->
+<div class="space-background">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    <div class="comets"></div>
+
+    <!-- Планеты -->
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+    <div class="planet planet-3"></div>
+    <div class="planet planet-4"></div>
+
+    <!-- Кольца планет -->
+    <div class="planet-ring ring-1"></div>
+    <div class="planet-ring ring-2"></div>
+</div>
+
 <div class="container">
     <div class="header">
-        <div class="logo">📱 SmartGram</div>
+        <!-- Космический логотип -->
+        <div class="logo-container">
+            <div class="logo-orbit">
+                <div class="logo-planet"></div>
+                <div class="logo-satellite"></div>
+            </div>
+            <div class="logo-text">
+                <span class="logo-smart">Smart</span><span class="logo-gram">Gram</span>
+            </div>
+        </div>
         <div class="subtitle">Создайте свой аккаунт</div>
     </div>
 
@@ -22,20 +49,35 @@
         <!-- Форма регистрации -->
         <form id="registerForm" th:action="@{/auth/register}" method="post">
             <div class="form-group">
-                <label for="username">Имя пользователя</label>
-                <input type="text" id="username" name="username" placeholder="Введите ваше имя" required>
+                <label for="username">
+                    <i class="fas fa-user"></i> Имя пользователя
+                </label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" name="username" placeholder="Введите ваше имя" required>
+                    <div class="input-glow"></div>
+                </div>
                 <div class="error-message" id="usernameError">Имя обязательно</div>
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                <label for="email">
+                    <i class="fas fa-envelope"></i> Email
+                </label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    <div class="input-glow"></div>
+                </div>
                 <div class="error-message" id="emailError">Введите корректный email</div>
             </div>
 
             <div class="form-group">
-                <label for="password">Пароль</label>
-                <input type="password" id="password" name="password" placeholder="Минимум 6 символов" required>
+                <label for="password">
+                    <i class="fas fa-lock"></i> Пароль
+                </label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Минимум 6 символов" required>
+                    <div class="input-glow"></div>
+                </div>
                 <div class="password-strength" id="passwordStrength">
                     <div class="password-strength-bar" id="passwordStrengthBar"></div>
                 </div>
@@ -44,8 +86,13 @@
             </div>
 
             <div class="form-group">
-                <label for="confirmPassword">Подтвердите пароль</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required>
+                <label for="confirmPassword">
+                    <i class="fas fa-lock"></i> Подтвердите пароль
+                </label>
+                <div class="input-wrapper">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required>
+                    <div class="input-glow"></div>
+                </div>
                 <div class="error-message" id="confirmPasswordError">Пароли не совпадают</div>
             </div>
 
@@ -53,11 +100,16 @@
                 Регистрируясь, вы соглашаетесь с <a href="#">Условиями использования</a> и <a href="#">Политикой конфиденциальности</a>
             </div>
 
-            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            <button type="submit" class="btn btn-primary">
+                <span class="btn-text">Зарегистрироваться</span>
+                <span class="btn-glow"></span>
+            </button>
         </form>
 
         <div class="loading" id="loading">
-            <div class="spinner"></div>
+            <div class="spinner-orbit">
+                <div class="spinner-planet"></div>
+            </div>
         </div>
 
         <div class="divider">

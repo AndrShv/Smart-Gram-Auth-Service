@@ -1057,3 +1057,724 @@ java.lang.NullPointerException: Cannot invoke "org.springframework.security.core
 2026-01-31T21:28:38.713+02:00  INFO 34827 --- [http-nio-8081-exec-4] com.example.project.log.LoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
 2026-01-31T21:28:38.713+02:00  INFO 34827 --- [http-nio-8081-exec-4] com.example.project.log.LoggingAspect    : │ ⏱ Время: 105 мс
 2026-01-31T21:28:38.713+02:00  INFO 34827 --- [http-nio-8081-exec-4] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: AuthRestController.login
+2026-01-31T21:39:49.826+02:00  INFO 34827 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:39:49.828+02:00  INFO 34827 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-31T21:39:49.830+02:00  INFO 34827 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-31T21:39:50.835+02:00  INFO 35671 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 35671 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-31T21:39:50.835+02:00 DEBUG 35671 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-31T21:39:50.835+02:00  INFO 35671 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-31T21:39:50.849+02:00  INFO 35671 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-31T21:39:50.849+02:00  INFO 35671 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-31T21:39:51.083+02:00  INFO 35671 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-31T21:39:51.100+02:00  INFO 35671 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2026-01-31T21:39:51.340+02:00  INFO 35671 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-31T21:39:51.344+02:00  INFO 35671 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-31T21:39:51.344+02:00  INFO 35671 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-31T21:39:51.355+02:00  INFO 35671 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-31T21:39:51.355+02:00  INFO 35671 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 505 ms
+2026-01-31T21:39:51.416+02:00  INFO 35671 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-31T21:39:51.431+02:00  INFO 35671 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-31T21:39:51.440+02:00  INFO 35671 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-31T21:39:51.498+02:00  INFO 35671 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-31T21:39:51.505+02:00  INFO 35671 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-31T21:39:51.551+02:00  INFO 35671 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1fb04125
+2026-01-31T21:39:51.552+02:00  INFO 35671 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-31T21:39:51.818+02:00  INFO 35671 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-31T21:39:51.835+02:00  INFO 35671 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:39:52.008+02:00 DEBUG 35671 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-31T21:39:52.136+02:00  WARN 35671 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-31T21:39:52.300+02:00  INFO 35671 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@fd079be, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6251e488, org.springframework.security.web.context.SecurityContextHolderFilter@5a05391, org.springframework.security.web.header.HeaderWriterFilter@448a29dd, org.springframework.web.filter.CorsFilter@6fe81ad, org.springframework.security.web.authentication.logout.LogoutFilter@12d7a60c, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@75f516c6, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@365c6e27, com.example.project.filters.JwtFilter@4f390602, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@56d3e94b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3cd9dae6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f5d1089, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5306fa03, org.springframework.security.web.session.SessionManagementFilter@1aad186, org.springframework.security.web.access.ExceptionTranslationFilter@3e611b9b, org.springframework.security.web.access.intercept.AuthorizationFilter@6451d9ef]
+2026-01-31T21:39:52.451+02:00  INFO 35671 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-31T21:39:52.461+02:00  INFO 35671 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-31T21:39:52.465+02:00  INFO 35671 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.759 seconds (process running for 1.908)
+2026-01-31T21:39:57.763+02:00  INFO 35671 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-31T21:39:57.763+02:00  INFO 35671 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-31T21:39:57.764+02:00  INFO 35671 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-31T21:39:57.770+02:00 DEBUG 35671 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-01-31T21:39:57.772+02:00 DEBUG 35671 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:39:57.773+02:00 DEBUG 35671 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:39:57.773+02:00 DEBUG 35671 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-01-31T21:39:57.773+02:00 DEBUG 35671 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:39:57.878+02:00 DEBUG 35671 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-01-31T21:39:57.878+02:00 DEBUG 35671 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:39:57.879+02:00 DEBUG 35671 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:39:57.884+02:00 DEBUG 35671 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:39:57.884+02:00 DEBUG 35671 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:39:57.901+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:39:57.902+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:39:57.941+02:00  WARN 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:39:57.941+02:00  WARN 35671 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:39:57.941+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:39:57.941+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:39:57.941+02:00 DEBUG 35671 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:39:59.999+02:00 DEBUG 35671 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /auth/register
+2026-01-31T21:39:59.999+02:00 DEBUG 35671 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:39:59.999+02:00 DEBUG 35671 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:39:59.999+02:00 DEBUG 35671 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /auth/register
+2026-01-31T21:39:59.999+02:00 DEBUG 35671 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:40:00.017+02:00 DEBUG 35671 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /js/register.js
+2026-01-31T21:40:00.017+02:00 DEBUG 35671 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/register.css
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/register.css
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /js/register.js
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:40:00.018+02:00 DEBUG 35671 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:40:00.019+02:00 DEBUG 35671 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:40:00.019+02:00 DEBUG 35671 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:40:00.835+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:40:00.836+02:00  WARN 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:40:00.836+02:00  WARN 35671 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:40:00.836+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:40:00.837+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:40:00.838+02:00 DEBUG 35671 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:41:56.779+02:00  INFO 35671 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:41:56.780+02:00  INFO 35671 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-31T21:41:56.782+02:00  INFO 35671 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-31T21:41:57.614+02:00  INFO 35752 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 35752 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-31T21:41:57.614+02:00 DEBUG 35752 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-31T21:41:57.615+02:00  INFO 35752 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-31T21:41:57.628+02:00  INFO 35752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-31T21:41:57.628+02:00  INFO 35752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-31T21:41:57.851+02:00  INFO 35752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-31T21:41:57.870+02:00  INFO 35752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2026-01-31T21:41:58.106+02:00  INFO 35752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-31T21:41:58.110+02:00  INFO 35752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-31T21:41:58.110+02:00  INFO 35752 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-31T21:41:58.122+02:00  INFO 35752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-31T21:41:58.122+02:00  INFO 35752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 494 ms
+2026-01-31T21:41:58.174+02:00  INFO 35752 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-31T21:41:58.186+02:00  INFO 35752 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-31T21:41:58.195+02:00  INFO 35752 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-31T21:41:58.246+02:00  INFO 35752 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-31T21:41:58.253+02:00  INFO 35752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-31T21:41:58.300+02:00  INFO 35752 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28267325
+2026-01-31T21:41:58.300+02:00  INFO 35752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-31T21:41:58.561+02:00  INFO 35752 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-31T21:41:58.577+02:00  INFO 35752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:41:58.747+02:00 DEBUG 35752 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-31T21:41:58.864+02:00  WARN 35752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-31T21:41:59.027+02:00  INFO 35752 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a059e40, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7069c9ab, org.springframework.security.web.context.SecurityContextHolderFilter@31570e3c, org.springframework.security.web.header.HeaderWriterFilter@2474175a, org.springframework.web.filter.CorsFilter@3691a035, org.springframework.security.web.authentication.logout.LogoutFilter@1fc4d03b, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@23bd42a, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@764c01f2, com.example.project.filters.JwtFilter@254c253f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1102715f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64fce44f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d636691, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20446484, org.springframework.security.web.session.SessionManagementFilter@3f88fe49, org.springframework.security.web.access.ExceptionTranslationFilter@7bda7bb9, org.springframework.security.web.access.intercept.AuthorizationFilter@4bb46e94]
+2026-01-31T21:41:59.173+02:00  INFO 35752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-31T21:41:59.183+02:00  INFO 35752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-31T21:41:59.186+02:00  INFO 35752 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.695 seconds (process running for 1.831)
+2026-01-31T21:42:02.051+02:00  INFO 35752 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-31T21:42:02.051+02:00  INFO 35752 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-31T21:42:02.052+02:00  INFO 35752 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-31T21:42:02.060+02:00 DEBUG 35752 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/register
+2026-01-31T21:42:02.063+02:00 DEBUG 35752 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:42:02.064+02:00 DEBUG 35752 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:42:02.065+02:00 DEBUG 35752 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/register
+2026-01-31T21:42:02.065+02:00 DEBUG 35752 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/register.css
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/register.js
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/register.css
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/register.js
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:42:02.173+02:00 DEBUG 35752 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:42:02.177+02:00 DEBUG 35752 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:42:02.178+02:00 DEBUG 35752 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:42:02.183+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:42:02.183+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:42:02.183+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:42:02.183+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:42:02.184+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:42:02.184+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:42:02.184+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:42:02.184+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:42:02.184+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:42:02.222+02:00  WARN 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:42:02.222+02:00  WARN 35752 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:42:02.222+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:42:02.222+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:42:02.223+02:00 DEBUG 35752 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:19.079+02:00  INFO 35752 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:45:19.080+02:00  INFO 35752 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-31T21:45:19.083+02:00  INFO 35752 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-31T21:45:19.916+02:00  INFO 35923 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 35923 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-31T21:45:19.917+02:00 DEBUG 35923 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-31T21:45:19.917+02:00  INFO 35923 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-31T21:45:19.930+02:00  INFO 35923 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-31T21:45:19.930+02:00  INFO 35923 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-31T21:45:20.150+02:00  INFO 35923 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-31T21:45:20.169+02:00  INFO 35923 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2026-01-31T21:45:20.409+02:00  INFO 35923 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-31T21:45:20.414+02:00  INFO 35923 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-31T21:45:20.414+02:00  INFO 35923 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-31T21:45:20.426+02:00  INFO 35923 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-31T21:45:20.427+02:00  INFO 35923 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 497 ms
+2026-01-31T21:45:20.482+02:00  INFO 35923 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-31T21:45:20.495+02:00  INFO 35923 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-31T21:45:20.506+02:00  INFO 35923 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-31T21:45:20.564+02:00  INFO 35923 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-31T21:45:20.573+02:00  INFO 35923 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-31T21:45:20.623+02:00  INFO 35923 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ce8e869
+2026-01-31T21:45:20.624+02:00  INFO 35923 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-31T21:45:20.882+02:00  INFO 35923 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-31T21:45:20.899+02:00  INFO 35923 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:45:21.071+02:00 DEBUG 35923 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-31T21:45:21.188+02:00  WARN 35923 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-31T21:45:21.346+02:00  INFO 35923 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27cda781, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ab35f8, org.springframework.security.web.context.SecurityContextHolderFilter@10e00c9e, org.springframework.security.web.header.HeaderWriterFilter@60d3780a, org.springframework.web.filter.CorsFilter@73dea9bd, org.springframework.security.web.authentication.logout.LogoutFilter@4e2d575e, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@154d8f0d, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@6e10417b, com.example.project.filters.JwtFilter@37441dd4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62f5b2d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@588a9129, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11e49da, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f292524, org.springframework.security.web.session.SessionManagementFilter@37e38919, org.springframework.security.web.access.ExceptionTranslationFilter@45cbdfe5, org.springframework.security.web.access.intercept.AuthorizationFilter@4b568161]
+2026-01-31T21:45:21.493+02:00  INFO 35923 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-31T21:45:21.505+02:00  INFO 35923 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-31T21:45:21.509+02:00  INFO 35923 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.715 seconds (process running for 1.853)
+2026-01-31T21:45:25.328+02:00  INFO 35923 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-31T21:45:25.328+02:00  INFO 35923 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-31T21:45:25.329+02:00  INFO 35923 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-31T21:45:25.337+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/register
+2026-01-31T21:45:25.340+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:45:25.341+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:25.341+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/register
+2026-01-31T21:45:25.341+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/register.js
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/register.css
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/register.js
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/register.css
+2026-01-31T21:45:25.452+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:45:25.453+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:45:25.457+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:45:25.457+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:25.462+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:45:25.463+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:45:25.463+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:45:25.463+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:45:25.463+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:45:25.463+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:45:25.463+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:45:25.463+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:45:25.464+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:45:25.498+02:00  WARN 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:45:25.499+02:00  WARN 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:45:25.499+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:25.499+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:45:25.499+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:28.164+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-01-31T21:45:28.164+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:45:28.164+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:28.164+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-01-31T21:45:28.165+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:45:28.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-01-31T21:45:28.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:45:28.185+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:28.186+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-01-31T21:45:28.187+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:45:28.187+02:00 DEBUG 35923 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-01-31T21:45:28.187+02:00 DEBUG 35923 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:45:28.187+02:00 DEBUG 35923 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:28.188+02:00 DEBUG 35923 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-01-31T21:45:28.188+02:00 DEBUG 35923 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:45:28.190+02:00 DEBUG 35923 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:45:28.190+02:00 DEBUG 35923 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:28.197+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:45:28.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:45:28.200+02:00  WARN 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:45:28.200+02:00  WARN 35923 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:45:28.200+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:28.202+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:45:28.202+02:00 DEBUG 35923 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:32.264+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /auth/forgot-password
+2026-01-31T21:45:32.264+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:45:32.264+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:32.265+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /auth/forgot-password
+2026-01-31T21:45:32.265+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:45:32.280+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /js/forgot-password.js
+2026-01-31T21:45:32.280+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /css/forgot-password.css
+2026-01-31T21:45:32.281+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:45:32.281+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:32.282+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /js/forgot-password.js
+2026-01-31T21:45:32.282+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:45:32.281+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:45:32.282+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:32.282+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /css/forgot-password.css
+2026-01-31T21:45:32.283+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:45:32.285+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:45:32.286+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:32.295+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:45:32.296+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:45:32.296+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:45:32.296+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:45:32.296+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:45:32.296+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:45:32.297+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:45:32.297+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:45:32.297+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:45:32.298+02:00  WARN 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:45:32.298+02:00  WARN 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:45:32.298+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:45:32.299+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:45:32.299+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:46:17.162+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-01-31T21:46:17.163+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:46:17.163+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:46:17.163+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-01-31T21:46:17.164+02:00 DEBUG 35923 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:46:17.182+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-01-31T21:46:17.183+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-01-31T21:46:17.183+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:46:17.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:46:17.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-01-31T21:46:17.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:46:17.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:46:17.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:46:17.184+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-01-31T21:46:17.185+02:00 DEBUG 35923 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:46:17.186+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:46:17.186+02:00 DEBUG 35923 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:46:17.194+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:46:17.194+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:46:17.194+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:46:17.195+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:46:17.195+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:46:17.195+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:46:17.195+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:46:17.195+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:46:17.195+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:46:17.196+02:00  WARN 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:46:17.196+02:00  WARN 35923 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:46:17.196+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:46:17.197+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:46:17.198+02:00 DEBUG 35923 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:16.654+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /auth/register
+2026-01-31T21:49:16.655+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:49:16.655+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:16.655+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /auth/register
+2026-01-31T21:49:16.655+02:00 DEBUG 35923 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:49:16.669+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /css/register.css
+2026-01-31T21:49:16.669+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /js/register.js
+2026-01-31T21:49:16.670+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:49:16.670+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:16.670+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /css/register.css
+2026-01-31T21:49:16.670+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:49:16.671+02:00 DEBUG 35923 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:49:16.671+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:16.671+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /js/register.js
+2026-01-31T21:49:16.671+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:49:16.673+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:16.674+02:00 DEBUG 35923 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:16.680+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:49:16.681+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:49:16.682+02:00  WARN 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:49:16.683+02:00  WARN 35923 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:49:16.683+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:16.684+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:16.684+02:00 DEBUG 35923 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:24.591+02:00  INFO 35923 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:49:24.592+02:00  INFO 35923 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-31T21:49:24.595+02:00  INFO 35923 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-31T21:49:25.487+02:00  INFO 36139 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 36139 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-31T21:49:25.487+02:00 DEBUG 36139 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-31T21:49:25.488+02:00  INFO 36139 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-31T21:49:25.502+02:00  INFO 36139 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-31T21:49:25.502+02:00  INFO 36139 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-31T21:49:25.735+02:00  INFO 36139 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-31T21:49:25.755+02:00  INFO 36139 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2026-01-31T21:49:26.019+02:00  INFO 36139 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-31T21:49:26.024+02:00  INFO 36139 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-31T21:49:26.024+02:00  INFO 36139 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-31T21:49:26.036+02:00  INFO 36139 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-31T21:49:26.037+02:00  INFO 36139 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 534 ms
+2026-01-31T21:49:26.095+02:00  INFO 36139 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-31T21:49:26.109+02:00  INFO 36139 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-31T21:49:26.120+02:00  INFO 36139 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-31T21:49:26.175+02:00  INFO 36139 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-31T21:49:26.182+02:00  INFO 36139 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-31T21:49:26.232+02:00  INFO 36139 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18d5df8b
+2026-01-31T21:49:26.233+02:00  INFO 36139 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-31T21:49:26.492+02:00  INFO 36139 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-31T21:49:26.510+02:00  INFO 36139 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:49:26.697+02:00 DEBUG 36139 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-31T21:49:26.820+02:00  WARN 36139 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-31T21:49:26.999+02:00  INFO 36139 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2aa3056, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1903951e, org.springframework.security.web.context.SecurityContextHolderFilter@3b1df7d5, org.springframework.security.web.header.HeaderWriterFilter@6ff59900, org.springframework.web.filter.CorsFilter@17fe8e27, org.springframework.security.web.authentication.logout.LogoutFilter@315257ca, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@641aa762, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@777c51e7, com.example.project.filters.JwtFilter@5d6958da, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@26715ba3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5bd0b55b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a6c3eee, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2980656, org.springframework.security.web.session.SessionManagementFilter@1c29669c, org.springframework.security.web.access.ExceptionTranslationFilter@4d881ba, org.springframework.security.web.access.intercept.AuthorizationFilter@4ddabaca]
+2026-01-31T21:49:27.165+02:00  INFO 36139 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-31T21:49:27.177+02:00  INFO 36139 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-31T21:49:27.182+02:00  INFO 36139 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.834 seconds (process running for 2.005)
+2026-01-31T21:49:30.663+02:00  INFO 36139 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-31T21:49:30.663+02:00  INFO 36139 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-31T21:49:30.664+02:00  INFO 36139 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-31T21:49:30.672+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/register
+2026-01-31T21:49:30.674+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:49:30.675+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:30.675+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/register
+2026-01-31T21:49:30.676+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-01-31T21:49:30.786+02:00 DEBUG 36139 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/register.js
+2026-01-31T21:49:30.786+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/register.css
+2026-01-31T21:49:30.786+02:00 DEBUG 36139 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:49:30.786+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:49:30.786+02:00 DEBUG 36139 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:30.786+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:30.787+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/register.css
+2026-01-31T21:49:30.787+02:00 DEBUG 36139 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/register.js
+2026-01-31T21:49:30.787+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-01-31T21:49:30.787+02:00 DEBUG 36139 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-01-31T21:49:30.791+02:00 DEBUG 36139 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:30.791+02:00 DEBUG 36139 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:30.797+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:49:30.797+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:49:30.797+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:49:30.798+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:49:30.798+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:49:30.798+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:49:30.798+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:49:30.798+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:49:30.798+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:49:30.833+02:00  WARN 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:49:30.833+02:00  WARN 36139 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:49:30.833+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:30.834+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:30.834+02:00 DEBUG 36139 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:33.133+02:00 DEBUG 36139 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-01-31T21:49:33.133+02:00 DEBUG 36139 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:49:33.133+02:00 DEBUG 36139 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:33.133+02:00 DEBUG 36139 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-01-31T21:49:33.133+02:00 DEBUG 36139 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:49:33.150+02:00 DEBUG 36139 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-01-31T21:49:33.150+02:00 DEBUG 36139 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:49:33.151+02:00 DEBUG 36139 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:33.150+02:00 DEBUG 36139 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-01-31T21:49:33.151+02:00 DEBUG 36139 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-01-31T21:49:33.151+02:00 DEBUG 36139 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:49:33.151+02:00 DEBUG 36139 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:49:33.151+02:00 DEBUG 36139 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:33.152+02:00 DEBUG 36139 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-01-31T21:49:33.152+02:00 DEBUG 36139 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:49:33.154+02:00 DEBUG 36139 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:33.155+02:00 DEBUG 36139 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:33.162+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:49:33.162+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:49:33.163+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:49:33.167+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:49:33.167+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:49:33.167+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:49:33.167+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:49:33.167+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:49:33.167+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:49:33.168+02:00  WARN 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:49:33.168+02:00  WARN 36139 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:49:33.169+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:33.170+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:33.170+02:00 DEBUG 36139 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:35.271+02:00 DEBUG 36139 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /auth/forgot-password
+2026-01-31T21:49:35.271+02:00 DEBUG 36139 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:49:35.272+02:00 DEBUG 36139 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:35.272+02:00 DEBUG 36139 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /auth/forgot-password
+2026-01-31T21:49:35.272+02:00 DEBUG 36139 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:49:35.290+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /js/forgot-password.js
+2026-01-31T21:49:35.290+02:00 DEBUG 36139 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /css/forgot-password.css
+2026-01-31T21:49:35.290+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:49:35.290+02:00 DEBUG 36139 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:49:35.291+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:35.291+02:00 DEBUG 36139 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:35.291+02:00 DEBUG 36139 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /css/forgot-password.css
+2026-01-31T21:49:35.291+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /js/forgot-password.js
+2026-01-31T21:49:35.291+02:00 DEBUG 36139 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:49:35.291+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:49:35.293+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:35.293+02:00 DEBUG 36139 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:35.300+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:49:35.301+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:49:35.302+02:00  WARN 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:49:35.302+02:00  WARN 36139 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:49:35.302+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:49:35.303+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:49:35.304+02:00 DEBUG 36139 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:40.501+02:00  INFO 36139 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:51:40.502+02:00  INFO 36139 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-31T21:51:40.505+02:00  INFO 36139 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-31T21:51:41.382+02:00  INFO 36268 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 36268 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-31T21:51:41.382+02:00 DEBUG 36268 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-31T21:51:41.383+02:00  INFO 36268 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-31T21:51:41.397+02:00  INFO 36268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-31T21:51:41.397+02:00  INFO 36268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-31T21:51:41.635+02:00  INFO 36268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-31T21:51:41.652+02:00  INFO 36268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2026-01-31T21:51:41.884+02:00  INFO 36268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-31T21:51:41.888+02:00  INFO 36268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-31T21:51:41.888+02:00  INFO 36268 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-31T21:51:41.899+02:00  INFO 36268 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-31T21:51:41.900+02:00  INFO 36268 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 501 ms
+2026-01-31T21:51:41.951+02:00  INFO 36268 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-31T21:51:41.963+02:00  INFO 36268 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-31T21:51:41.972+02:00  INFO 36268 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-31T21:51:42.025+02:00  INFO 36268 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-31T21:51:42.032+02:00  INFO 36268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-31T21:51:42.079+02:00  INFO 36268 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52b02b34
+2026-01-31T21:51:42.080+02:00  INFO 36268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-31T21:51:42.339+02:00  INFO 36268 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-31T21:51:42.355+02:00  INFO 36268 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:51:42.526+02:00 DEBUG 36268 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-31T21:51:42.645+02:00  WARN 36268 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-31T21:51:42.806+02:00  INFO 36268 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7bfebb37, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13287b6a, org.springframework.security.web.context.SecurityContextHolderFilter@50604eee, org.springframework.security.web.header.HeaderWriterFilter@4e642626, org.springframework.web.filter.CorsFilter@35192bf9, org.springframework.security.web.authentication.logout.LogoutFilter@4e4225f3, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@63152cf, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@6c980bc4, com.example.project.filters.JwtFilter@430fe04d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@14872bd5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d330e31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26d65a78, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1973c0b5, org.springframework.security.web.session.SessionManagementFilter@3a7e2b80, org.springframework.security.web.access.ExceptionTranslationFilter@1f9f8c44, org.springframework.security.web.access.intercept.AuthorizationFilter@74975f9f]
+2026-01-31T21:51:42.962+02:00  INFO 36268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-31T21:51:42.972+02:00  INFO 36268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-31T21:51:42.976+02:00  INFO 36268 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.73 seconds (process running for 1.869)
+2026-01-31T21:51:46.052+02:00  INFO 36268 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-31T21:51:46.052+02:00  INFO 36268 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-31T21:51:46.053+02:00  INFO 36268 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-31T21:51:46.061+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/forgot-password
+2026-01-31T21:51:46.063+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:51:46.063+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:46.064+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/forgot-password
+2026-01-31T21:51:46.064+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/forgot-password.css
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/forgot-password.js
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/forgot-password.css
+2026-01-31T21:51:46.171+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:51:46.172+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/forgot-password.js
+2026-01-31T21:51:46.172+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:51:46.176+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:51:46.176+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:46.181+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:51:46.181+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:51:46.181+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:51:46.182+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:51:46.182+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:51:46.182+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:51:46.182+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:51:46.182+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:51:46.182+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:51:46.217+02:00  WARN 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:51:46.217+02:00  WARN 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:51:46.217+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:46.218+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:51:46.218+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:50.540+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /auth/forgot-password
+2026-01-31T21:51:50.547+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:51:50.547+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:50.548+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /auth/forgot-password
+2026-01-31T21:51:50.548+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : ┌─────────────────────────────────────────────────
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ➤ ВХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │   • email = andrey678a@gmail.com
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : ┌──▶ ВХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ Параметры:
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │   • email = String andrey678a@gmail.com
+2026-01-31T21:51:50.592+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.p.service.PasswordResetServiceImpl   : Попытка сгенерировать и отправить токен для сброса пароля на email: andrey678a@gmail.com
+2026-01-31T21:51:50.635+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.email=?
+2026-01-31T21:51:50.654+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] org.hibernate.SQL                        : update users set is_active=?,created_at=?,email=?,password=?,reset_token=?,reset_token_created_at=?,role=?,updated_at=?,username=? where id=?
+2026-01-31T21:51:50.662+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] c.e.p.service.PasswordResetServiceImpl   : Для пользователя andrey678a@gmail.com сохранён одноразовый токен сброса: 942881
+2026-01-31T21:51:53.048+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.p.service.PasswordResetServiceImpl   : ✅ Код для сброса пароля успешно отправлен на: andrey678a@gmail.com
+2026-01-31T21:51:53.048+02:00  INFO 36268 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ ✓ УСПЕШНО: PasswordResetServiceImpl.sendResetToken
+2026-01-31T21:51:53.048+02:00  INFO 36268 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ Результат: String 942881
+2026-01-31T21:51:53.048+02:00  INFO 36268 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : │ ⏱ Время: 2456 мс
+2026-01-31T21:51:53.049+02:00  INFO 36268 --- [http-nio-8081-exec-5] com.example.project.log.LoggingAspect    : └──▶ ВЫХОД: PasswordResetServiceImpl.sendResetToken
+2026-01-31T21:51:53.049+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │
+2026-01-31T21:51:53.049+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: PasswordResetServiceImpl.sendResetToken
+2026-01-31T21:51:53.049+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Результат: 942881
+2026-01-31T21:51:53.049+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 2457 мс
+2026-01-31T21:51:53.049+02:00  WARN 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ⚠ ВНИМАНИЕ: медленное выполнение!
+2026-01-31T21:51:53.049+02:00  INFO 36268 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : └─────────────────────────────────────────────────
+2026-01-31T21:51:53.074+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /auth/reset-password?sent
+2026-01-31T21:51:53.074+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /auth/reset-password, shouldNotFilter: true
+2026-01-31T21:51:53.074+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:53.075+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /auth/reset-password?sent
+2026-01-31T21:51:53.075+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /auth/reset-password, shouldNotFilter: true
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /css/reset-password.css
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /js/reset-password.js
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /css/reset-password.css, shouldNotFilter: true
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /js/reset-password.js, shouldNotFilter: true
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /css/reset-password.css
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /js/reset-password.js
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /css/reset-password.css, shouldNotFilter: true
+2026-01-31T21:51:53.096+02:00 DEBUG 36268 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /js/reset-password.js, shouldNotFilter: true
+2026-01-31T21:51:53.097+02:00 DEBUG 36268 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:51:53.098+02:00 DEBUG 36268 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:53.105+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:51:53.105+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:51:53.105+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:51:53.105+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:51:53.105+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:51:53.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:51:53.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:51:53.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:51:53.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:51:53.107+02:00  WARN 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:51:53.107+02:00  WARN 36268 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:51:53.107+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:51:53.108+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:51:53.108+02:00 DEBUG 36268 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:00.080+02:00 DEBUG 36268 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /auth/forgot-password
+2026-01-31T21:52:00.081+02:00 DEBUG 36268 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:52:00.081+02:00 DEBUG 36268 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:00.081+02:00 DEBUG 36268 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /auth/forgot-password
+2026-01-31T21:52:00.082+02:00 DEBUG 36268 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-01-31T21:52:00.094+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /css/forgot-password.css
+2026-01-31T21:52:00.094+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /js/forgot-password.js
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /css/forgot-password.css
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /js/forgot-password.js
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-01-31T21:52:00.095+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-01-31T21:52:00.097+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:52:00.097+02:00 DEBUG 36268 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:00.105+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:52:00.106+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:52:00.108+02:00  WARN 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:52:00.108+02:00  WARN 36268 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:52:00.108+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:00.109+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:52:00.110+02:00 DEBUG 36268 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:02.246+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-01-31T21:52:02.247+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:52:02.247+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:02.247+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-01-31T21:52:02.247+02:00 DEBUG 36268 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:52:02.260+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-01-31T21:52:02.260+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:52:02.260+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:02.260+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-01-31T21:52:02.260+02:00 DEBUG 36268 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:52:02.261+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-01-31T21:52:02.261+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:52:02.261+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:02.261+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-01-31T21:52:02.261+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:52:02.263+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:52:02.263+02:00 DEBUG 36268 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:02.270+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:52:02.270+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:52:02.270+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:52:02.270+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:52:02.271+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:52:02.271+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:52:02.271+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:52:02.271+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:52:02.271+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:52:02.272+02:00  WARN 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:52:02.272+02:00  WARN 36268 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:52:02.272+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:52:02.273+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:52:02.274+02:00 DEBUG 36268 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:55:37.456+02:00  INFO 36268 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:55:37.457+02:00  INFO 36268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-31T21:55:37.459+02:00  INFO 36268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-31T21:55:38.300+02:00  INFO 36463 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 36463 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-01-31T21:55:38.300+02:00 DEBUG 36463 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-01-31T21:55:38.300+02:00  INFO 36463 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-31T21:55:38.313+02:00  INFO 36463 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-31T21:55:38.314+02:00  INFO 36463 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-31T21:55:38.524+02:00  INFO 36463 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-31T21:55:38.541+02:00  INFO 36463 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2026-01-31T21:55:38.784+02:00  INFO 36463 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-31T21:55:38.788+02:00  INFO 36463 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-31T21:55:38.788+02:00  INFO 36463 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-01-31T21:55:38.799+02:00  INFO 36463 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-31T21:55:38.799+02:00  INFO 36463 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 485 ms
+2026-01-31T21:55:38.854+02:00  INFO 36463 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-31T21:55:38.866+02:00  INFO 36463 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-01-31T21:55:38.877+02:00  INFO 36463 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-31T21:55:38.931+02:00  INFO 36463 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-31T21:55:38.938+02:00  INFO 36463 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-31T21:55:38.984+02:00  INFO 36463 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@288f2454
+2026-01-31T21:55:38.984+02:00  INFO 36463 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-31T21:55:39.244+02:00  INFO 36463 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-31T21:55:39.264+02:00  INFO 36463 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-31T21:55:39.450+02:00 DEBUG 36463 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-01-31T21:55:39.576+02:00  WARN 36463 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-31T21:55:39.749+02:00  INFO 36463 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74dda410, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29cb9588, org.springframework.security.web.context.SecurityContextHolderFilter@67b05cad, org.springframework.security.web.header.HeaderWriterFilter@90dcb82, org.springframework.web.filter.CorsFilter@1c09cb9, org.springframework.security.web.authentication.logout.LogoutFilter@f4248a4, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@3d956c6a, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@107edc52, com.example.project.filters.JwtFilter@31162ab3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6ecdb75c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@103466f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d419164, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@673a5c9f, org.springframework.security.web.session.SessionManagementFilter@6b725cfe, org.springframework.security.web.access.ExceptionTranslationFilter@c8b891d, org.springframework.security.web.access.intercept.AuthorizationFilter@49c1828]
+2026-01-31T21:55:39.916+02:00  INFO 36463 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-31T21:55:39.928+02:00  INFO 36463 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-01-31T21:55:39.932+02:00  INFO 36463 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 1.762 seconds (process running for 1.901)
+2026-01-31T21:55:45.489+02:00  INFO 36463 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-31T21:55:45.489+02:00  INFO 36463 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-31T21:55:45.491+02:00  INFO 36463 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-01-31T21:55:45.498+02:00 DEBUG 36463 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-01-31T21:55:45.501+02:00 DEBUG 36463 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:55:45.502+02:00 DEBUG 36463 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:55:45.502+02:00 DEBUG 36463 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-01-31T21:55:45.502+02:00 DEBUG 36463 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-01-31T21:55:45.608+02:00 DEBUG 36463 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-01-31T21:55:45.608+02:00 DEBUG 36463 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-01-31T21:55:45.608+02:00 DEBUG 36463 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:55:45.608+02:00 DEBUG 36463 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:55:45.608+02:00 DEBUG 36463 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:55:45.608+02:00 DEBUG 36463 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:55:45.609+02:00 DEBUG 36463 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-01-31T21:55:45.609+02:00 DEBUG 36463 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-01-31T21:55:45.609+02:00 DEBUG 36463 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-01-31T21:55:45.609+02:00 DEBUG 36463 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-01-31T21:55:45.613+02:00 DEBUG 36463 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:55:45.613+02:00 DEBUG 36463 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:55:45.618+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-01-31T21:55:45.619+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-01-31T21:55:45.654+02:00  WARN 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token validation failed
+2026-01-31T21:55:45.654+02:00  WARN 36463 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-01-31T21:55:45.654+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-01-31T21:55:45.655+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-01-31T21:55:45.655+02:00 DEBUG 36463 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
