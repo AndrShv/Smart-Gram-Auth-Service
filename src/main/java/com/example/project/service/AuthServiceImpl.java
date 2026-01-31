@@ -40,11 +40,23 @@ public class AuthServiceImpl implements Register, Login {
             throw new UserAlreadyExistsException("Пользователь с таким email уже существует");
         }
 
+        Role role;
+        if (dto.getRole() != null) {
+            try {
+                role = Role.valueOf(dto.getRole().toUpperCase());
+            } catch (IllegalArgumentException e) {
+                log.warn("Неизвестная роль: {}, устанавливаем по умолчанию USER", dto.getRole());
+                role = Role.USER;
+            }
+        } else {
+            role = Role.USER;
+        }
+
         User user = User.builder()
                 .username(dto.getUsername())
                 .email(dto.getEmail())
                 .password(passwordEncoder.encode(dto.getPassword()))
-                .role(Role.USER)
+                .role(role)
                 .active(true)
                 .build();
 
