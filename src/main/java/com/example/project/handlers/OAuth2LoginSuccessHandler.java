@@ -65,7 +65,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
             }
         }
 
-        response.sendRedirect("http://localhost:8082/main");
+        response.sendRedirect("http://localhost:8082/profiles/create");
     }
 
 }
