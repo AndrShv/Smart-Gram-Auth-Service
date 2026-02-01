@@ -2,6 +2,7 @@ package com.example.project.rest;
 
 import com.example.project.dto.ForgotPasswordDTO;
 import com.example.project.dto.ResetPasswordDTO;
+import com.example.project.exceptions.EmailException;
 import com.example.project.filters.JwtFilter;
 import com.example.project.interfaces.ResetPassword;
 import com.example.project.interfaces.SendResetToken;
@@ -44,15 +45,16 @@ class PasswordResetRestControllerTest {
     @MockBean
     private ResetPassword resetPassword;
 
-    // ---------- request reset token ----------
+    // ===============================
+    // REQUEST RESET TOKEN
+    // ===============================
 
     @Test
     void requestResetToken_success() throws Exception {
         ForgotPasswordDTO dto = new ForgotPasswordDTO();
         dto.setEmail("test@example.com");
 
-        Mockito.when(sendResetToken.sendResetToken(anyString()))
-                .thenReturn("123456");
+        Mockito.when(sendResetToken.sendResetToken(anyString())).thenReturn("123456");
 
         mockMvc.perform(post("/api/password/reset/request")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -74,7 +76,24 @@ class PasswordResetRestControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
-    // ---------- confirm reset password ----------
+    @Test
+    void requestResetToken_exception_shouldReturn500() throws Exception {
+        ForgotPasswordDTO dto = new ForgotPasswordDTO();
+        dto.setEmail("test@example.com");
+
+        Mockito.doThrow(new EmailException("Email service error"))
+                .when(sendResetToken).sendResetToken(anyString());
+
+        mockMvc.perform(post("/api/password/reset/request")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(dto)))
+                .andExpect(status().isInternalServerError())
+                .andExpect(content().string("Email service error"));
+    }
+
+    // ===============================
+    // CONFIRM RESET PASSWORD
+    // ===============================
 
     @Test
     void confirmResetPassword_success() throws Exception {
@@ -82,9 +101,7 @@ class PasswordResetRestControllerTest {
         dto.setToken("123456");
         dto.setNewPassword("newPassword123");
 
-        Mockito.doNothing()
-                .when(resetPassword)
-                .resetPassword(anyString(), anyString());
+        Mockito.doNothing().when(resetPassword).resetPassword(anyString(), anyString());
 
         mockMvc.perform(post("/api/password/reset/confirm")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -92,8 +109,7 @@ class PasswordResetRestControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("Пароль успешно изменён"));
 
-        Mockito.verify(resetPassword)
-                .resetPassword("123456", "newPassword123");
+        Mockito.verify(resetPassword).resetPassword("123456", "newPassword123");
     }
 
     @Test
@@ -106,5 +122,41 @@ class PasswordResetRestControllerTest {
                         .content(objectMapper.writeValueAsString(dto)))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+    void confirmResetPassword_missingPassword_shouldReturn400() throws Exception {
+        ResetPasswordDTO dto = new ResetPasswordDTO();
+        dto.setToken("123456");
+
+        mockMvc.perform(post("/api/password/reset/confirm")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(dto)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void confirmResetPassword_exception_shouldReturn500() throws Exception {
+        ResetPasswordDTO dto = new ResetPasswordDTO();
+        dto.setToken("123456");
+        dto.setNewPassword("newPassword123");
+
+        Mockito.doThrow(new RuntimeException("Token invalid or expired"))
+                .when(resetPassword).resetPassword(anyString(), anyString());
+
+        mockMvc.perform(post("/api/password/reset/confirm")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(dto)))
+                .andExpect(status().isInternalServerError())
+                .andExpect(content().string("Token invalid or expired"));
+    }
+
+    @Test
+    void confirmResetPassword_emptyBody_shouldReturn400() throws Exception {
+        mockMvc.perform(post("/api/password/reset/confirm")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{}"))
+                .andExpect(status().isBadRequest());
+    }
+
 }
 

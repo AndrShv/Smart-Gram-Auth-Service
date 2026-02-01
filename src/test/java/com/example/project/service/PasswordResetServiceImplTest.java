@@ -144,5 +144,66 @@ class PasswordResetServiceImplTest {
 
         verify(userRepository, never()).save(any());
     }
+
+    // ============================
+// sendResetToken - edge cases
+// ============================
+
+    @Test
+    void sendResetToken_emptyEmail_shouldThrowException() {
+        assertThrows(UserNotFoundByEmailException.class,
+                () -> passwordResetService.sendResetToken(""));
+    }
+
+    @Test
+    void sendResetToken_multipleRequests_generateDifferentTokens() {
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
+        doNothing().when(mailSender).send(any(SimpleMailMessage.class));
+        when(userRepository.save(any(User.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        String token1 = passwordResetService.sendResetToken(user.getEmail());
+        String oldToken = user.getResetToken();
+
+        String token2 = passwordResetService.sendResetToken(user.getEmail());
+
+        assertNotEquals(token1, token2);
+        assertNotEquals(oldToken, token2);
+    }
+
+// ============================
+// resetPassword - edge cases
+// ============================
+
+    @Test
+    void resetPassword_emptyNewPassword_shouldEncodeEmptyPassword() {
+        user.setResetToken("123456");
+        user.setResetTokenCreatedAt(LocalDateTime.now());
+
+        when(userRepository.findByResetToken("123456")).thenReturn(Optional.of(user));
+        when(passwordEncoder.encode("")).thenReturn("encoded-empty");
+
+        passwordResetService.resetPassword("123456", "");
+
+        assertEquals("encoded-empty", user.getPassword());
+        assertNull(user.getResetToken());
+        assertNull(user.getResetTokenCreatedAt());
+    }
+    @Test
+    void resetPassword_tokenJustBeforeExpiry_shouldSucceed() {
+        user.setResetToken("123456");
+        user.setResetTokenCreatedAt(LocalDateTime.now().minusSeconds(59));
+
+        when(userRepository.findByResetToken("123456")).thenReturn(Optional.of(user));
+        when(passwordEncoder.encode("newPass")).thenReturn("encoded-newPass");
+
+        assertDoesNotThrow(() -> passwordResetService.resetPassword("123456", "newPass"));
+
+        assertEquals("encoded-newPass", user.getPassword());
+        assertNull(user.getResetToken());
+        assertNull(user.getResetTokenCreatedAt());
+    }
+
+
+
 }
 

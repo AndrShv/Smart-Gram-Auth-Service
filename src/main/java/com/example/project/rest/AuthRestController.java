@@ -46,15 +46,22 @@ public class AuthRestController {
     }
 
     @GetMapping("/me")
-    public UserResponseDTO me(Authentication authentication) {
+    public ResponseEntity<UserResponseDTO> me(Authentication authentication) {
+        if (authentication == null || !(authentication.getPrincipal() instanceof CustomUserDetails)) {
+            return ResponseEntity.status(401).build();
+        }
+
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
 
-        return UserResponseDTO.builder()
+        UserResponseDTO response = UserResponseDTO.builder()
                 .id(String.valueOf(userDetails.getUser().getId()))
                 .email(userDetails.getUser().getEmail())
                 .role(String.valueOf(userDetails.getUser().getRole()))
                 .build();
+
+        return ResponseEntity.ok(response);
     }
+
 
 }
 
