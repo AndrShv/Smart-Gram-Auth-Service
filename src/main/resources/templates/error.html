@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена | SmartGram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/error.css}">
+</head>
+<body>
+<!-- Космический фон -->
+<div class="space-background">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    <div class="comets"></div>
+
+    <!-- Планеты -->
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+    <div class="planet planet-3"></div>
+    <div class="planet planet-4"></div>
+</div>
+
+<div class="error-container">
+    <!-- Космический астронавт -->
+    <div class="astronaut-container">
+        <div class="helmet-glow"></div>
+        <div class="astronaut">🧑‍🚀</div>
+    </div>
+
+    <div class="error-code">404</div>
+    <h1 class="error-title">Потерялись в космосе?</h1>
+    <p class="error-message">
+        К сожалению, страница, которую вы ищете, не существует или была перемещена в другую галактику.
+    </p>
+
+    <div class="buttons-container">
+        <!-- Ссылки через Thymeleaf -->
+        <a th:href="@{/dashboard}" class="btn">
+            <i class="fas fa-home"></i>
+            <span>На главную</span>
+        </a>
+        <a th:href="@{/auth/login}" class="btn btn-secondary">
+            <i class="fas fa-sign-in-alt"></i>
+            <span>Войти</span>
+        </a>
+    </div>
+</div>
+
+<script>
+    // Создание дополнительных комет динамически
+    function createComets() {
+        const cometsContainer = document.querySelector('.comets');
+        if (!cometsContainer) return;
+
+        const cometCount = 5;
+
+        for (let i = 0; i < cometCount; i++) {
+            const comet = document.createElement('div');
+            comet.className = 'comet-trail';
+            comet.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: #fff;
+                border-radius: 50%;
+                box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+                top: ${Math.random() * 100}%;
+                left: ${Math.random() * 100}%;
+                animation: comet ${8 + Math.random() * 4}s linear infinite;
+                animation-delay: ${Math.random() * 8}s;
+            `;
+            cometsContainer.appendChild(comet);
+        }
+    }
+
+    // Запуск при загрузке
+    document.addEventListener('DOMContentLoaded', createComets);
+</script>
+</body>
+</html>
