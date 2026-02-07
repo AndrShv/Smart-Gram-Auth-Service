@@ -7,8 +7,10 @@ import com.example.project.dto.UserLoginDTO;
 import com.example.project.dto.UserRegisterDTO;
 import com.example.project.dto.UserResponseDTO;
 import com.example.project.service.AuthServiceImpl;
+import com.example.project.service.custom.CustomUserDetails;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,6 +44,25 @@ public class AuthRestController {
             return ResponseEntity.status(401).body(e.getMessage());
         }
     }
+
+    @GetMapping("/me")
+    public ResponseEntity<UserResponseDTO> me(Authentication authentication) {
+        if (authentication == null || !(authentication.getPrincipal() instanceof CustomUserDetails)) {
+            return ResponseEntity.status(401).build();
+        }
+
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+
+        UserResponseDTO response = UserResponseDTO.builder()
+                .id(String.valueOf(userDetails.getUser().getId()))
+                .email(userDetails.getUser().getEmail())
+                .role(String.valueOf(userDetails.getUser().getRole()))
+                .build();
+
+        return ResponseEntity.ok(response);
+    }
+
+
 }
 
 
