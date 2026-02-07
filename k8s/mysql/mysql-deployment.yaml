@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: mysql-auth
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mysql
+      app: mysql-auth
   template:
     metadata:
       labels:
-        app: mysql
+        app: mysql-auth
     spec:
       containers:
         - name: mysql
@@ -46,4 +46,4 @@ spec:
       volumes:
         - name: mysql-storage
           persistentVolumeClaim:
-            claimName: mysql-pvc
+            claimName: mysql-auth-pvc

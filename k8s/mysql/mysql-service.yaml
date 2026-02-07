@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: mysql-auth
 spec:
   selector:
-    app: mysql
+    app: mysql-auth
   ports:
     - port: 3306
       targetPort: 3306

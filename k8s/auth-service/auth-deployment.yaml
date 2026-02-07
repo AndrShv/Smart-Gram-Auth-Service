@@ -14,17 +14,20 @@ spec:
     spec:
       containers:
         - name: auth-service
-          image: auth-service:latest
-          imagePullPolicy: IfNotPresent
+          image: auth-service:v1
+          imagePullPolicy: Never
           ports:
             - containerPort: 8081
           env:
+            # Database
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql:3306/authservice
+              value: jdbc:mysql://mysql-auth:3306/authservice
             - name: SPRING_DATASOURCE_USERNAME
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
               value: "1111"
+
+            # RabbitMQ
             - name: SPRING_RABBITMQ_HOST
               value: rabbitmq
             - name: SPRING_RABBITMQ_PORT
@@ -33,3 +36,13 @@ spec:
               value: guest
             - name: SPRING_RABBITMQ_PASSWORD
               value: guest
+          readinessProbe:
+            tcpSocket:
+              port: 8081
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 8081
+            initialDelaySeconds: 30
+            periodSeconds: 10
