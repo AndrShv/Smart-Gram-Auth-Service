@@ -1,290 +1,757 @@
-2026-02-12T15:46:02.450+02:00  INFO 759 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 759 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
-2026-02-12T15:46:02.454+02:00 DEBUG 759 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
-2026-02-12T15:46:02.454+02:00  INFO 759 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
-2026-02-12T15:46:02.471+02:00  INFO 759 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-02-12T15:46:02.471+02:00  INFO 759 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-02-12T15:46:02.819+02:00  INFO 759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-12T15:46:02.838+02:00  INFO 759 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
-2026-02-12T15:46:03.148+02:00  INFO 759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2026-02-12T15:46:03.152+02:00  INFO 759 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-02-12T15:46:03.152+02:00  INFO 759 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2026-02-12T15:46:03.165+02:00  INFO 759 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-02-12T15:46:03.165+02:00  INFO 759 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 694 ms
-2026-02-12T15:46:03.298+02:00  INFO 759 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-02-12T15:46:03.319+02:00  INFO 759 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2026-02-12T15:46:03.330+02:00  INFO 759 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-02-12T15:46:03.404+02:00  INFO 759 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-12T15:46:03.414+02:00  INFO 759 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-02-12T15:46:03.490+02:00  INFO 759 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38ce84ec
-2026-02-12T15:46:03.491+02:00  INFO 759 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-02-12T15:46:03.792+02:00  INFO 759 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-02-12T15:46:03.816+02:00  INFO 759 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-12T15:46:04.008+02:00 DEBUG 759 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
-2026-02-12T15:46:04.143+02:00  WARN 759 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-02-12T15:46:04.361+02:00  INFO 759 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2026-02-12T15:46:04.416+02:00  INFO 759 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c49dd42, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c1a1b95, org.springframework.security.web.context.SecurityContextHolderFilter@76d36ee3, org.springframework.security.web.header.HeaderWriterFilter@79d43d20, org.springframework.web.filter.CorsFilter@1ecde028, org.springframework.security.web.authentication.logout.LogoutFilter@3cb96fdc, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7ae54992, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@46083d9, com.example.project.filters.JwtFilter@40ff6a6b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@49198372, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31459797, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@625a256a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d0eb969, org.springframework.security.web.session.SessionManagementFilter@7d4e32ff, org.springframework.security.web.access.ExceptionTranslationFilter@7a2b375a, org.springframework.security.web.access.intercept.AuthorizationFilter@5119d7ba]
-2026-02-12T15:46:04.636+02:00  INFO 759 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-02-12T15:46:04.665+02:00  INFO 759 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
-2026-02-12T15:46:04.672+02:00  INFO 759 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 2.358 seconds (process running for 2.521)
-2026-02-12T16:07:21.194+02:00  INFO 759 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-02-12T16:07:21.194+02:00  INFO 759 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-02-12T16:07:21.195+02:00  INFO 759 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-02-12T16:07:21.205+02:00 DEBUG 759 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
-2026-02-12T16:07:21.208+02:00 DEBUG 759 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
-2026-02-12T16:07:21.208+02:00 DEBUG 759 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:07:21.210+02:00 DEBUG 759 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
-2026-02-12T16:07:21.210+02:00 DEBUG 759 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
-2026-02-12T16:07:21.311+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
-2026-02-12T16:07:21.311+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
-2026-02-12T16:07:21.312+02:00 DEBUG 759 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
-2026-02-12T16:07:21.312+02:00 DEBUG 759 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
-2026-02-12T16:07:21.312+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:07:21.312+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:07:21.312+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
-2026-02-12T16:07:21.312+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
-2026-02-12T16:07:21.312+02:00 DEBUG 759 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
-2026-02-12T16:07:21.313+02:00 DEBUG 759 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
-2026-02-12T16:07:21.317+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-02-12T16:07:21.317+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:07:23.125+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
-2026-02-12T16:07:23.127+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
-2026-02-12T16:07:23.127+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
-2026-02-12T16:07:23.129+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
-2026-02-12T16:07:23.130+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
-2026-02-12T16:07:23.130+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
-2026-02-12T16:07:23.130+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: NO
-2026-02-12T16:07:23.130+02:00  WARN 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : No JWT token found in request
-2026-02-12T16:07:23.130+02:00  WARN 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
-2026-02-12T16:07:23.131+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:07:23.133+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-02-12T16:07:23.134+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:07:25.967+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /oauth2/authorization/google
-2026-02-12T16:07:25.993+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=581512564337-kgoa5d4v66bplr2v7hdm83avamcb8tps.apps.googleusercontent.com&scope=openid%20profile%20email&state=cAl7QBq5Px18KDgDgQVbismzo2XJfvq4dAlLiM9LwyY%3D&redirect_uri=http://localhost:8081/login/oauth2/code/google&nonce=VFHRqMUcwL2_qUuauyWHexwZ_pGrMGKGbprobZEqPj0
-2026-02-12T16:07:29.862+02:00 DEBUG 759 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /login/oauth2/code/google?state=cAl7QBq5Px18KDgDgQVbismzo2XJfvq4dAlLiM9LwyY%3D&code=4%2F0ASc3gC34a4L-xtDBY43iFd35eSPYIZf3KlMYGhCpIAOTDk4EBQlpblEdVwrfa1-ccApeqA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
-2026-02-12T16:07:30.319+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomOAuth2UserService.loadUser
-2026-02-12T16:07:30.319+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:07:30.319+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │   • userRequest = OidcUserRequest org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest@1106ab52
-2026-02-12T16:07:30.320+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.p.s.custom.CustomOAuth2UserService   : OAuth2 вход: email=andrey678a@gmail.com
-2026-02-12T16:07:30.356+02:00 DEBUG 759 --- [http-nio-8081-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:07:30.364+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.p.s.custom.CustomOAuth2UserService   : Найден существующий пользователь: andrey678a@gmail.com (id: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c)
-2026-02-12T16:07:30.365+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomOAuth2UserService.loadUser
-2026-02-12T16:07:30.365+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomOidcUser com.example.project.service.custom.CustomOidcUser@43dc36b5
-2026-02-12T16:07:30.365+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 46 мс
-2026-02-12T16:07:30.365+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomOAuth2UserService.loadUser
-2026-02-12T16:07:30.370+02:00 DEBUG 759 --- [http-nio-8081-exec-6] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 7C0D1501C02E87527BE70F9923E0194B
-2026-02-12T16:07:30.371+02:00 DEBUG 759 --- [http-nio-8081-exec-6] .s.o.c.w.OAuth2LoginAuthenticationFilter : Set SecurityContextHolder to OAuth2AuthenticationToken [Principal=com.example.project.service.custom.CustomOidcUser@43dc36b5, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=7C0D1501C02E87527BE70F9923E0194B], Granted Authorities=[ROLE_USER]]
-2026-02-12T16:07:30.384+02:00 DEBUG 759 --- [http-nio-8081-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:07:30.413+02:00  INFO 759 --- [http-nio-8081-exec-6] c.e.p.h.OAuth2LoginSuccessHandler        : ✅ JWT выдан пользователю andrey678a@gmail.com и помещён в cookie + header
-2026-02-12T16:08:28.872+02:00 DEBUG 759 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/auth/me
-2026-02-12T16:08:28.872+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
-2026-02-12T16:08:28.872+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: Bearer eyJhbGciOiJIUzUxMiJ9.ey...
-2026-02-12T16:08:28.872+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Extracted token from Bearer header
-2026-02-12T16:08:28.872+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /api/auth/me
-2026-02-12T16:08:28.872+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
-2026-02-12T16:08:28.884+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
-2026-02-12T16:08:28.884+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:08:28.884+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:08:28.884+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
-2026-02-12T16:08:28.884+02:00 DEBUG 759 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
-2026-02-12T16:08:28.885+02:00 DEBUG 759 --- [http-nio-8081-exec-8] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:08:28.888+02:00 DEBUG 759 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
-2026-02-12T16:08:28.889+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:08:28.889+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@372d5111
-2026-02-12T16:08:28.889+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 5 мс
-2026-02-12T16:08:28.889+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:08:28.889+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@1e7ac4bf]
-2026-02-12T16:08:28.889+02:00  INFO 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@23a54395]
-2026-02-12T16:08:28.889+02:00 DEBUG 759 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/auth/me
-2026-02-12T16:08:28.889+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
-2026-02-12T16:08:28.891+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: AuthRestController.me
-2026-02-12T16:08:28.891+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:08:28.891+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • authentication = [PROTECTED]
-2026-02-12T16:08:28.892+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.me
-2026-02-12T16:08:28.892+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
-2026-02-12T16:08:28.892+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 1 мс
-2026-02-12T16:08:28.892+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: AuthRestController.me
-2026-02-12T16:14:29.102+02:00 DEBUG 759 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /login/oauth2/code/google?state=cAl7QBq5Px18KDgDgQVbismzo2XJfvq4dAlLiM9LwyY%3D&code=4%2F0ASc3gC1447aENjYTMhJsmvEaZH34rXKfS2CCj0p_bTiSLgb3TDkslA06Ha5CpCJaYkVkXg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
-2026-02-12T16:14:29.108+02:00 DEBUG 759 --- [http-nio-8081-exec-1] o.s.s.web.DefaultRedirectStrategy        : Redirecting to /auth/login?error
-2026-02-12T16:14:29.115+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /auth/login?error
-2026-02-12T16:14:29.117+02:00 DEBUG 759 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
-2026-02-12T16:14:29.118+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:14:29.119+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /auth/login?error
-2026-02-12T16:14:29.119+02:00 DEBUG 759 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
-2026-02-12T16:14:29.153+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
-2026-02-12T16:14:29.153+02:00 DEBUG 759 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
-2026-02-12T16:14:29.153+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:14:29.154+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
-2026-02-12T16:14:29.154+02:00 DEBUG 759 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
-2026-02-12T16:14:29.156+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
-2026-02-12T16:14:29.156+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
-2026-02-12T16:14:29.156+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:14:29.157+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
-2026-02-12T16:14:29.157+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
-2026-02-12T16:14:29.159+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-02-12T16:14:29.159+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:14:29.180+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
-2026-02-12T16:14:29.180+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
-2026-02-12T16:14:29.180+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Authorization header: null
-2026-02-12T16:14:29.180+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
-2026-02-12T16:14:29.181+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
-2026-02-12T16:14:29.181+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: JSESSIONID = 52BB0D422E6E02CA3B81...
-2026-02-12T16:14:29.181+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
-2026-02-12T16:14:29.181+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : JWT cookie found!
-2026-02-12T16:14:29.181+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
-2026-02-12T16:14:29.181+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
-2026-02-12T16:14:29.182+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
-2026-02-12T16:14:29.183+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:14:29.183+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:14:29.183+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
-2026-02-12T16:14:29.183+02:00 DEBUG 759 --- [http-nio-8081-exec-5] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
-2026-02-12T16:14:29.185+02:00 DEBUG 759 --- [http-nio-8081-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:14:29.187+02:00 DEBUG 759 --- [http-nio-8081-exec-5] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
-2026-02-12T16:14:29.188+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:14:29.188+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@2338fc79
-2026-02-12T16:14:29.188+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 5 мс
-2026-02-12T16:14:29.188+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:14:29.188+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@15c547c7]
-2026-02-12T16:14:29.188+02:00  INFO 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@2c3324f8]
-2026-02-12T16:14:29.188+02:00 DEBUG 759 --- [http-nio-8081-exec-5] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 52BB0D422E6E02CA3B81AEE4CA61A201
-2026-02-12T16:14:29.189+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
-2026-02-12T16:14:29.189+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
-2026-02-12T16:14:29.192+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-02-12T16:14:29.192+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:14:36.085+02:00 DEBUG 759 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /oauth2/authorization/google
-2026-02-12T16:14:36.086+02:00 DEBUG 759 --- [http-nio-8081-exec-6] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=581512564337-kgoa5d4v66bplr2v7hdm83avamcb8tps.apps.googleusercontent.com&scope=openid%20profile%20email&state=8yotFrp96P-drORdvL8MVhE66qOZVOQ58rmxu1UvMYs%3D&redirect_uri=http://localhost:8081/login/oauth2/code/google&nonce=oul1ecz7S33ZxLQ7fI3GUrPtBZWFMuKfeguBgy9pljo
-2026-02-12T16:14:39.310+02:00 DEBUG 759 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /login/oauth2/code/google?state=8yotFrp96P-drORdvL8MVhE66qOZVOQ58rmxu1UvMYs%3D&code=4%2F0ASc3gC0wvw2X6vAXL3o1Aa8_-fQt5lBubQq7iCxKExj2e_GphYeI2PSZDeeNAN9C_Xg-Fw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
-2026-02-12T16:14:39.603+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomOAuth2UserService.loadUser
-2026-02-12T16:14:39.603+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:14:39.603+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • userRequest = OidcUserRequest org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest@252d3240
-2026-02-12T16:14:39.604+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomOAuth2UserService   : OAuth2 вход: email=andrey678a@gmail.com
-2026-02-12T16:14:39.608+02:00 DEBUG 759 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:14:39.613+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomOAuth2UserService   : Найден существующий пользователь: andrey678a@gmail.com (id: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c)
-2026-02-12T16:14:39.613+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomOAuth2UserService.loadUser
-2026-02-12T16:14:39.613+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomOidcUser com.example.project.service.custom.CustomOidcUser@4195f581
-2026-02-12T16:14:39.614+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 10 мс
-2026-02-12T16:14:39.614+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomOAuth2UserService.loadUser
-2026-02-12T16:14:39.619+02:00 DEBUG 759 --- [http-nio-8081-exec-7] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 896E446B72F8D1EB84E379805676E806
-2026-02-12T16:14:39.619+02:00 DEBUG 759 --- [http-nio-8081-exec-7] .s.o.c.w.OAuth2LoginAuthenticationFilter : Set SecurityContextHolder to OAuth2AuthenticationToken [Principal=com.example.project.service.custom.CustomOidcUser@4195f581, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=896E446B72F8D1EB84E379805676E806], Granted Authorities=[ROLE_USER]]
-2026-02-12T16:14:39.622+02:00 DEBUG 759 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:14:39.628+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.p.h.OAuth2LoginSuccessHandler        : ✅ JWT выдан пользователю andrey678a@gmail.com и помещён в cookie + header
-2026-02-12T16:15:21.621+02:00 DEBUG 759 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/auth/me
-2026-02-12T16:15:21.621+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
-2026-02-12T16:15:21.621+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: Bearer eyJhbGciOiJIUzUxMiJ9.ey...
-2026-02-12T16:15:21.621+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Extracted token from Bearer header
-2026-02-12T16:15:21.621+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /api/auth/me
-2026-02-12T16:15:21.621+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
-2026-02-12T16:15:21.622+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
-2026-02-12T16:15:21.622+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:15:21.622+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:15:21.622+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
-2026-02-12T16:15:21.622+02:00 DEBUG 759 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
-2026-02-12T16:15:21.623+02:00 DEBUG 759 --- [http-nio-8081-exec-8] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:15:21.626+02:00 DEBUG 759 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@2bd8faeb
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 4 мс
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:15:21.626+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@3b1394cb]
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@c01fc6e]
-2026-02-12T16:15:21.626+02:00 DEBUG 759 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/auth/me
-2026-02-12T16:15:21.626+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: AuthRestController.me
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • authentication = [PROTECTED]
-2026-02-12T16:15:21.626+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.me
-2026-02-12T16:15:21.627+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
-2026-02-12T16:15:21.627+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 0 мс
-2026-02-12T16:15:21.627+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: AuthRestController.me
-2026-02-12T16:16:26.513+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
-2026-02-12T16:16:26.516+02:00 DEBUG 759 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
-2026-02-12T16:16:26.517+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:16:26.517+02:00 DEBUG 759 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
-2026-02-12T16:16:26.518+02:00 DEBUG 759 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
-2026-02-12T16:16:26.526+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
-2026-02-12T16:16:26.527+02:00 DEBUG 759 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
-2026-02-12T16:16:26.529+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-02-12T16:16:26.529+02:00 DEBUG 759 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:16:27.199+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
-2026-02-12T16:16:27.199+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
-2026-02-12T16:16:27.200+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Authorization header: null
-2026-02-12T16:16:27.200+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
-2026-02-12T16:16:27.200+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
-2026-02-12T16:16:27.200+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: JSESSIONID = 3951F212F5A7EF49424C...
-2026-02-12T16:16:27.200+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
-2026-02-12T16:16:27.200+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : JWT cookie found!
-2026-02-12T16:16:27.200+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
-2026-02-12T16:16:27.201+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
-2026-02-12T16:16:27.202+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
-2026-02-12T16:16:27.203+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:16:27.203+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:16:27.203+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
-2026-02-12T16:16:27.203+02:00 DEBUG 759 --- [http-nio-8081-exec-5] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
-2026-02-12T16:16:27.205+02:00 DEBUG 759 --- [http-nio-8081-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:16:27.211+02:00 DEBUG 759 --- [http-nio-8081-exec-5] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
-2026-02-12T16:16:27.211+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:16:27.211+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@2b2ebb29
-2026-02-12T16:16:27.211+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 8 мс
-2026-02-12T16:16:27.211+02:00  INFO 759 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:16:27.211+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@447268a4]
-2026-02-12T16:16:27.212+02:00  INFO 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@1c2e4518]
-2026-02-12T16:16:27.212+02:00 DEBUG 759 --- [http-nio-8081-exec-5] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 3951F212F5A7EF49424CA73FAE7B22B3
-2026-02-12T16:16:27.213+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
-2026-02-12T16:16:27.213+02:00 DEBUG 759 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
-2026-02-12T16:16:27.215+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
-2026-02-12T16:16:27.216+02:00 DEBUG 759 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
-2026-02-12T16:16:28.894+02:00 DEBUG 759 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /oauth2/authorization/google
-2026-02-12T16:16:28.896+02:00 DEBUG 759 --- [http-nio-8081-exec-6] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=581512564337-kgoa5d4v66bplr2v7hdm83avamcb8tps.apps.googleusercontent.com&scope=openid%20profile%20email&state=qhljdUOYthN1grDMtVJH7ZiMCobBtz-hLxFa4XFeFgY%3D&redirect_uri=http://localhost:8081/login/oauth2/code/google&nonce=06q29nq6jR-j6r0t8Bl-NQO-NvExWd3s38G1v814rjU
-2026-02-12T16:16:32.125+02:00 DEBUG 759 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /login/oauth2/code/google?state=qhljdUOYthN1grDMtVJH7ZiMCobBtz-hLxFa4XFeFgY%3D&code=4%2F0ASc3gC3k78UsfJwWfwOHDiWK57eTEUs33jVvPdvzVm3TPs7ET5JqQsHYTKCUmCuIvaRz8g&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
-2026-02-12T16:16:32.363+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomOAuth2UserService.loadUser
-2026-02-12T16:16:32.363+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:16:32.363+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • userRequest = OidcUserRequest org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest@62801291
-2026-02-12T16:16:32.364+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomOAuth2UserService   : OAuth2 вход: email=andrey678a@gmail.com
-2026-02-12T16:16:32.369+02:00 DEBUG 759 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:16:32.373+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomOAuth2UserService   : Найден существующий пользователь: andrey678a@gmail.com (id: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c)
-2026-02-12T16:16:32.374+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomOAuth2UserService.loadUser
-2026-02-12T16:16:32.374+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomOidcUser com.example.project.service.custom.CustomOidcUser@b8dc3b0
-2026-02-12T16:16:32.374+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 11 мс
-2026-02-12T16:16:32.374+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomOAuth2UserService.loadUser
-2026-02-12T16:16:32.377+02:00 DEBUG 759 --- [http-nio-8081-exec-7] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 6728228A9AB47ACA9A30FE856A609FB5
-2026-02-12T16:16:32.378+02:00 DEBUG 759 --- [http-nio-8081-exec-7] .s.o.c.w.OAuth2LoginAuthenticationFilter : Set SecurityContextHolder to OAuth2AuthenticationToken [Principal=com.example.project.service.custom.CustomOidcUser@b8dc3b0, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=6728228A9AB47ACA9A30FE856A609FB5], Granted Authorities=[ROLE_USER]]
-2026-02-12T16:16:32.381+02:00 DEBUG 759 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:16:32.386+02:00  INFO 759 --- [http-nio-8081-exec-7] c.e.p.h.OAuth2LoginSuccessHandler        : ✅ JWT выдан пользователю andrey678a@gmail.com и помещён в cookie + header
-2026-02-12T16:16:51.960+02:00 DEBUG 759 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/auth/me
-2026-02-12T16:16:51.961+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
-2026-02-12T16:16:51.961+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: Bearer eyJhbGciOiJIUzUxMiJ9.ey...
-2026-02-12T16:16:51.961+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Extracted token from Bearer header
-2026-02-12T16:16:51.961+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /api/auth/me
-2026-02-12T16:16:51.961+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
-2026-02-12T16:16:51.961+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
-2026-02-12T16:16:51.961+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:16:51.961+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:16:51.961+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
-2026-02-12T16:16:51.961+02:00 DEBUG 759 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
-2026-02-12T16:16:51.962+02:00 DEBUG 759 --- [http-nio-8081-exec-8] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
-2026-02-12T16:16:51.964+02:00 DEBUG 759 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
-2026-02-12T16:16:51.964+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:16:51.964+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@63536da7
-2026-02-12T16:16:51.964+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 3 мс
-2026-02-12T16:16:51.964+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
-2026-02-12T16:16:51.964+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@2b80563c]
-2026-02-12T16:16:51.964+02:00  INFO 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x000000700191a810@188ae182]
-2026-02-12T16:16:51.964+02:00 DEBUG 759 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/auth/me
-2026-02-12T16:16:51.964+02:00 DEBUG 759 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
-2026-02-12T16:16:51.965+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: AuthRestController.me
-2026-02-12T16:16:51.965+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
-2026-02-12T16:16:51.965+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • authentication = [PROTECTED]
-2026-02-12T16:16:51.965+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.me
-2026-02-12T16:16:51.965+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
-2026-02-12T16:16:51.965+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 0 мс
-2026-02-12T16:16:51.965+02:00  INFO 759 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: AuthRestController.me
-2026-02-12T16:28:37.980+02:00  INFO 759 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-02-12T16:28:37.982+02:00  INFO 759 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-02-12T16:28:37.982+02:00  INFO 759 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-15T19:41:58.391+02:00  INFO 11240 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 11240 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-02-15T19:41:58.394+02:00 DEBUG 11240 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-02-15T19:41:58.394+02:00  INFO 11240 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-02-15T19:41:58.408+02:00  INFO 11240 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-15T19:41:58.408+02:00  INFO 11240 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-15T19:41:58.753+02:00  INFO 11240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-15T19:41:58.775+02:00  INFO 11240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2026-02-15T19:41:59.073+02:00  INFO 11240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-02-15T19:41:59.078+02:00  INFO 11240 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-15T19:41:59.078+02:00  INFO 11240 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-15T19:41:59.090+02:00  INFO 11240 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-15T19:41:59.090+02:00  INFO 11240 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 682 ms
+2026-02-15T19:41:59.223+02:00  INFO 11240 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-15T19:41:59.245+02:00  INFO 11240 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-15T19:41:59.258+02:00  INFO 11240 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-15T19:41:59.338+02:00  INFO 11240 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-15T19:41:59.348+02:00  INFO 11240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-15T19:42:00.492+02:00 ERROR 11240 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:689) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1684) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4850) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:488) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347) ~[spring-boot-3.2.1.jar:3.2.1]
+	at com.example.project.AuthApplication.main(AuthApplication.java:9) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.1.jar:3.2.1]
+
+2026-02-15T19:42:00.502+02:00  WARN 11240 --- [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:689) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1684) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4850) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:488) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347) ~[spring-boot-3.2.1.jar:3.2.1]
+	at com.example.project.AuthApplication.main(AuthApplication.java:9) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.1.jar:3.2.1]
+
+2026-02-15T19:42:00.503+02:00 ERROR 11240 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2026-02-15T19:42:00.504+02:00 ERROR 11240 --- [restartedMain] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtFilter' defined in file [/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes/com/example/project/filters/JwtFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'customUserDetailsService' defined in file [/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes/com/example/project/service/custom/CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.project.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-02-15T19:42:00.529+02:00  INFO 11240 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-15T19:42:00.533+02:00  WARN 11240 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-02-15T19:42:00.541+02:00  INFO 11240 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-15T19:42:00.548+02:00 ERROR 11240 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619) ~[spring-context-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347) ~[spring-boot-3.2.1.jar:3.2.1]
+	at com.example.project.AuthApplication.main(AuthApplication.java:9) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.1.jar:3.2.1]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:145) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162) ~[spring-boot-3.2.1.jar:3.2.1]
+	... 11 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtFilter' defined in file [/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes/com/example/project/filters/JwtFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'customUserDetailsService' defined in file [/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes/com/example/project/service/custom/CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.project.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.2.1.jar:3.2.1]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4850) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:488) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126) ~[spring-boot-3.2.1.jar:3.2.1]
+	... 16 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customUserDetailsService' defined in file [/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes/com/example/project/service/custom/CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.project.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 57 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.example.project.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1684) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1433) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 71 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:689) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 85 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 97 common frames omitted
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.1.2.jar:6.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769) ~[spring-beans-6.1.2.jar:6.1.2]
+	... 104 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:143) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:348) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.4.1.Final.jar:6.4.1.Final]
+	... 119 common frames omitted
+
+2026-02-15T19:42:32.739+02:00  INFO 11263 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 11263 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-02-15T19:42:32.740+02:00 DEBUG 11263 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-02-15T19:42:32.740+02:00  INFO 11263 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-02-15T19:42:32.752+02:00  INFO 11263 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-15T19:42:32.753+02:00  INFO 11263 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-15T19:42:33.034+02:00  INFO 11263 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-15T19:42:33.050+02:00  INFO 11263 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interface.
+2026-02-15T19:42:33.307+02:00  INFO 11263 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-02-15T19:42:33.311+02:00  INFO 11263 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-15T19:42:33.311+02:00  INFO 11263 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-02-15T19:42:33.324+02:00  INFO 11263 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-15T19:42:33.325+02:00  INFO 11263 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 572 ms
+2026-02-15T19:42:33.440+02:00  INFO 11263 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-15T19:42:33.464+02:00  INFO 11263 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-02-15T19:42:33.473+02:00  INFO 11263 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-15T19:42:33.542+02:00  INFO 11263 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-15T19:42:33.552+02:00  INFO 11263 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-15T19:42:33.620+02:00  INFO 11263 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6430c5b0
+2026-02-15T19:42:33.621+02:00  INFO 11263 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-15T19:42:33.892+02:00  INFO 11263 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-15T19:42:33.910+02:00  INFO 11263 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-15T19:42:34.109+02:00 DEBUG 11263 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-02-15T19:42:34.233+02:00  WARN 11263 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-15T19:42:34.446+02:00  INFO 11263 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-02-15T19:42:34.487+02:00  INFO 11263 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4cc0e7d0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5279fcb4, org.springframework.security.web.context.SecurityContextHolderFilter@ccec6c3, org.springframework.security.web.header.HeaderWriterFilter@4f1b1ec5, org.springframework.web.filter.CorsFilter@24e2fd6f, org.springframework.security.web.authentication.logout.LogoutFilter@2a6978a6, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@45932829, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@14204c26, com.example.project.filters.JwtFilter@7010cd21, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@552c2ec7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22b4214a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b643e61, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7dea6b23, org.springframework.security.web.session.SessionManagementFilter@8cf3ed1, org.springframework.security.web.access.ExceptionTranslationFilter@324cf59f, org.springframework.security.web.access.intercept.AuthorizationFilter@67c2cb4a]
+2026-02-15T19:42:34.709+02:00  INFO 11263 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-02-15T19:42:34.733+02:00  INFO 11263 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-02-15T19:42:34.739+02:00  INFO 11263 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 2.128 seconds (process running for 2.272)
+2026-02-15T19:44:22.521+02:00  INFO 11263 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-15T19:44:22.521+02:00  INFO 11263 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-15T19:44:22.522+02:00  INFO 11263 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-02-15T19:44:22.532+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-02-15T19:44:22.536+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:44:22.537+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:44:22.540+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-02-15T19:44:22.540+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:44:22.645+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-02-15T19:44:22.646+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-02-15T19:44:22.646+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:44:22.646+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:44:22.646+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:44:22.646+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:44:22.646+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-02-15T19:44:22.647+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:44:22.647+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-02-15T19:44:22.647+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:44:22.652+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-02-15T19:44:22.652+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:44:22.676+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-02-15T19:44:22.677+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-02-15T19:44:22.677+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-02-15T19:44:22.677+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-02-15T19:44:22.677+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-02-15T19:44:22.677+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-02-15T19:44:22.678+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-02-15T19:44:22.678+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-02-15T19:44:22.678+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-02-15T19:44:22.713+02:00  WARN 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token validation failed
+2026-02-15T19:44:22.713+02:00  WARN 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-02-15T19:44:22.713+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:44:22.714+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-02-15T19:44:22.714+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:44:25.534+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /oauth2/authorization/google
+2026-02-15T19:44:25.557+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=581512564337-kgoa5d4v66bplr2v7hdm83avamcb8tps.apps.googleusercontent.com&scope=openid%20profile%20email&state=F4wh9e0__prnzpe3OC0pasuBcneRSK19i8EVlxlXtVE%3D&redirect_uri=http://localhost:8081/login/oauth2/code/google&nonce=UcniGgxIoQvZrv3rVxbeowT7C3r1iH9KhISbqv90i3I
+2026-02-15T19:44:29.010+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /login/oauth2/code/google?state=F4wh9e0__prnzpe3OC0pasuBcneRSK19i8EVlxlXtVE%3D&code=4%2F0AfrIepCZK9aR2fBttWeCn6Dmt1SsXokt3OC1-wePxdf3hj6yZWf-Js7Gro1Za-MCTCI_kg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
+2026-02-15T19:44:29.396+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomOAuth2UserService.loadUser
+2026-02-15T19:44:29.396+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:44:29.396+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • userRequest = OidcUserRequest org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest@75be4c9
+2026-02-15T19:44:29.397+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomOAuth2UserService   : OAuth2 вход: email=andrey678a@gmail.com
+2026-02-15T19:44:29.437+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:44:29.445+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomOAuth2UserService   : Найден существующий пользователь: andrey678a@gmail.com (id: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c)
+2026-02-15T19:44:29.445+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomOAuth2UserService.loadUser
+2026-02-15T19:44:29.445+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomOidcUser com.example.project.service.custom.CustomOidcUser@329b8fa7
+2026-02-15T19:44:29.445+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 49 мс
+2026-02-15T19:44:29.445+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomOAuth2UserService.loadUser
+2026-02-15T19:44:29.449+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from E30DA0F0CAAB2CD9993E99D5D88B13E7
+2026-02-15T19:44:29.450+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] .s.o.c.w.OAuth2LoginAuthenticationFilter : Set SecurityContextHolder to OAuth2AuthenticationToken [Principal=com.example.project.service.custom.CustomOidcUser@329b8fa7, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=E30DA0F0CAAB2CD9993E99D5D88B13E7], Granted Authorities=[ROLE_USER]]
+2026-02-15T19:44:29.463+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:44:29.475+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.p.h.OAuth2LoginSuccessHandler        : ✅ JWT выдан пользователю andrey678a@gmail.com и помещён в cookie + header
+2026-02-15T19:44:50.097+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /api/auth/me
+2026-02-15T19:44:50.097+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
+2026-02-15T19:44:50.097+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: Bearer eyJhbGciOiJIUzUxMiJ9.ey...
+2026-02-15T19:44:50.097+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Extracted token from Bearer header
+2026-02-15T19:44:50.097+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /api/auth/me
+2026-02-15T19:44:50.097+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-02-15T19:44:50.099+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
+2026-02-15T19:44:50.099+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:44:50.099+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:44:50.099+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
+2026-02-15T19:44:50.099+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
+2026-02-15T19:44:50.100+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:44:50.103+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
+2026-02-15T19:44:50.103+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:44:50.104+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@503e52f2
+2026-02-15T19:44:50.104+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 4 мс
+2026-02-15T19:44:50.104+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:44:50.104+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@5f29c8bf]
+2026-02-15T19:44:50.104+02:00  INFO 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@5550b2d1]
+2026-02-15T19:44:50.104+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /api/auth/me
+2026-02-15T19:44:50.104+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
+2026-02-15T19:44:50.106+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: AuthRestController.me
+2026-02-15T19:44:50.106+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:44:50.106+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │   • authentication = [PROTECTED]
+2026-02-15T19:44:50.107+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.me
+2026-02-15T19:44:50.107+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
+2026-02-15T19:44:50.107+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 1 мс
+2026-02-15T19:44:50.107+02:00  INFO 11263 --- [http-nio-8081-exec-8] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: AuthRestController.me
+2026-02-15T19:49:39.440+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-02-15T19:49:39.441+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:49:39.441+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:49:39.442+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-02-15T19:49:39.442+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:49:39.455+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-02-15T19:49:39.455+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-02-15T19:49:39.456+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:49:39.456+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:49:39.456+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:49:39.456+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:49:39.456+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-02-15T19:49:39.456+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-02-15T19:49:39.457+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:49:39.457+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:49:39.459+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-02-15T19:49:39.459+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:49:40.126+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-02-15T19:49:40.127+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-02-15T19:49:40.128+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-02-15T19:49:40.128+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-02-15T19:49:40.128+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-02-15T19:49:40.128+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: JSESSIONID = 9C008BE193A67D1573E5...
+2026-02-15T19:49:40.128+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-02-15T19:49:40.128+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-02-15T19:49:40.128+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-02-15T19:49:40.129+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-02-15T19:49:40.130+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
+2026-02-15T19:49:40.130+02:00  INFO 11263 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:40.131+02:00  INFO 11263 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:49:40.131+02:00  INFO 11263 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
+2026-02-15T19:49:40.131+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
+2026-02-15T19:49:40.133+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:49:40.137+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
+2026-02-15T19:49:40.137+02:00  INFO 11263 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:40.137+02:00  INFO 11263 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@4cac255d
+2026-02-15T19:49:40.137+02:00  INFO 11263 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 7 мс
+2026-02-15T19:49:40.137+02:00  INFO 11263 --- [http-nio-8081-exec-5] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:40.137+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@272476b7]
+2026-02-15T19:49:40.137+02:00  INFO 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@4af7fc]
+2026-02-15T19:49:40.138+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 9C008BE193A67D1573E522EA7803CD36
+2026-02-15T19:49:40.139+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-02-15T19:49:40.139+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-02-15T19:49:40.143+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-02-15T19:49:40.144+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:49:46.571+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /auth/login
+2026-02-15T19:49:46.572+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:49:46.677+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:46.677+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:49:46.677+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
+2026-02-15T19:49:46.677+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
+2026-02-15T19:49:46.677+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:49:46.681+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
+2026-02-15T19:49:46.681+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:46.681+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@12d4fa30
+2026-02-15T19:49:46.681+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 5 мс
+2026-02-15T19:49:46.681+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:46.745+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2026-02-15T19:49:46.745+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from DCE845F138F2F812118A6020E615AD74
+2026-02-15T19:49:46.745+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] w.a.UsernamePasswordAuthenticationFilter : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.example.project.service.custom.CustomUserDetails@12d4fa30, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=DCE845F138F2F812118A6020E615AD74], Granted Authorities=[com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@21f55b72]]
+2026-02-15T19:49:46.853+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/auth/me
+2026-02-15T19:49:46.853+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
+2026-02-15T19:49:46.853+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Authorization header: Bearer eyJhbGciOiJIUzUxMiJ9.ey...
+2026-02-15T19:49:46.853+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Extracted token from Bearer header
+2026-02-15T19:49:46.853+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Processing request: GET /api/auth/me
+2026-02-15T19:49:46.853+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-02-15T19:49:46.853+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
+2026-02-15T19:49:46.853+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:46.853+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:49:46.854+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
+2026-02-15T19:49:46.854+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
+2026-02-15T19:49:46.854+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:49:46.856+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@795f1fb2
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 3 мс
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:49:46.856+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@24169c4e]
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@31d0259]
+2026-02-15T19:49:46.856+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/auth/me
+2026-02-15T19:49:46.856+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: AuthRestController.me
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • authentication = [PROTECTED]
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.me
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
+2026-02-15T19:49:46.856+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 0 мс
+2026-02-15T19:49:46.857+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: AuthRestController.me
+2026-02-15T19:50:05.215+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-02-15T19:50:05.216+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:50:05.216+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:05.217+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-02-15T19:50:05.217+02:00 DEBUG 11263 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:50:05.230+02:00 DEBUG 11263 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-02-15T19:50:05.231+02:00 DEBUG 11263 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:50:05.231+02:00 DEBUG 11263 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:05.231+02:00 DEBUG 11263 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-02-15T19:50:05.232+02:00 DEBUG 11263 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:50:05.232+02:00 DEBUG 11263 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:05.232+02:00 DEBUG 11263 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-02-15T19:50:05.232+02:00 DEBUG 11263 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:50:05.232+02:00 DEBUG 11263 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-02-15T19:50:05.232+02:00 DEBUG 11263 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:50:05.234+02:00 DEBUG 11263 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-02-15T19:50:05.235+02:00 DEBUG 11263 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:08.596+02:00 DEBUG 11263 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-02-15T19:50:08.596+02:00 DEBUG 11263 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:50:08.596+02:00 DEBUG 11263 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:08.596+02:00 DEBUG 11263 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-02-15T19:50:08.597+02:00 DEBUG 11263 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-02-15T19:50:08.610+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-02-15T19:50:08.610+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-02-15T19:50:08.610+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:50:08.610+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:08.611+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:50:08.611+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:08.611+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-02-15T19:50:08.611+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-02-15T19:50:08.611+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-02-15T19:50:08.611+02:00 DEBUG 11263 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-02-15T19:50:08.613+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-02-15T19:50:08.614+02:00 DEBUG 11263 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:09.197+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-02-15T19:50:09.198+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-02-15T19:50:09.198+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-02-15T19:50:09.198+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-02-15T19:50:09.199+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-02-15T19:50:09.199+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: JSESSIONID = 89316F8A92B298221490...
+2026-02-15T19:50:09.199+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-02-15T19:50:09.199+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-02-15T19:50:09.199+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-02-15T19:50:09.199+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-02-15T19:50:09.201+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
+2026-02-15T19:50:09.202+02:00  INFO 11263 --- [http-nio-8081-exec-4] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:50:09.202+02:00  INFO 11263 --- [http-nio-8081-exec-4] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:50:09.202+02:00  INFO 11263 --- [http-nio-8081-exec-4] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
+2026-02-15T19:50:09.202+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
+2026-02-15T19:50:09.207+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:50:09.213+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
+2026-02-15T19:50:09.214+02:00  INFO 11263 --- [http-nio-8081-exec-4] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:50:09.214+02:00  INFO 11263 --- [http-nio-8081-exec-4] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@2423a868
+2026-02-15T19:50:09.214+02:00  INFO 11263 --- [http-nio-8081-exec-4] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 13 мс
+2026-02-15T19:50:09.214+02:00  INFO 11263 --- [http-nio-8081-exec-4] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:50:09.214+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@3531087a]
+2026-02-15T19:50:09.214+02:00  INFO 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@34cd24b6]
+2026-02-15T19:50:09.214+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 89316F8A92B298221490EE283B0927C9
+2026-02-15T19:50:09.215+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-02-15T19:50:09.215+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-02-15T19:50:09.220+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-02-15T19:50:09.221+02:00 DEBUG 11263 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-15T19:50:10.610+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /oauth2/authorization/google
+2026-02-15T19:50:10.612+02:00 DEBUG 11263 --- [http-nio-8081-exec-5] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=581512564337-kgoa5d4v66bplr2v7hdm83avamcb8tps.apps.googleusercontent.com&scope=openid%20profile%20email&state=YzDYnlf9C_SBgiu1yqaNeLLz0lPFrHydUp_v6HY-nb0%3D&redirect_uri=http://localhost:8081/login/oauth2/code/google&nonce=aIVST3Tn9qazV_vseon216ZjYQ9ffoAkzngu9YHLBog
+2026-02-15T19:50:14.402+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /login/oauth2/code/google?state=YzDYnlf9C_SBgiu1yqaNeLLz0lPFrHydUp_v6HY-nb0%3D&code=4%2F0AfrIepD2zQAbJHe5f0Yztz85Z3-yuOq9XiN7fe85Zq8qZgl7KUoqW761Jt2e6CxBzjpCcA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
+2026-02-15T19:50:14.653+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomOAuth2UserService.loadUser
+2026-02-15T19:50:14.653+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:50:14.654+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │   • userRequest = OidcUserRequest org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest@576b6918
+2026-02-15T19:50:14.655+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.p.s.custom.CustomOAuth2UserService   : OAuth2 вход: email=andrey678a@gmail.com
+2026-02-15T19:50:14.659+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:50:14.663+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.p.s.custom.CustomOAuth2UserService   : Найден существующий пользователь: andrey678a@gmail.com (id: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c)
+2026-02-15T19:50:14.663+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomOAuth2UserService.loadUser
+2026-02-15T19:50:14.663+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomOidcUser com.example.project.service.custom.CustomOidcUser@7949879e
+2026-02-15T19:50:14.663+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 10 мс
+2026-02-15T19:50:14.663+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomOAuth2UserService.loadUser
+2026-02-15T19:50:14.668+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 51A0CE8C89D374F9565DACCC1977BE39
+2026-02-15T19:50:14.668+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] .s.o.c.w.OAuth2LoginAuthenticationFilter : Set SecurityContextHolder to OAuth2AuthenticationToken [Principal=com.example.project.service.custom.CustomOidcUser@7949879e, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=51A0CE8C89D374F9565DACCC1977BE39], Granted Authorities=[ROLE_USER]]
+2026-02-15T19:50:14.671+02:00 DEBUG 11263 --- [http-nio-8081-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:50:14.676+02:00  INFO 11263 --- [http-nio-8081-exec-6] c.e.p.h.OAuth2LoginSuccessHandler        : ✅ JWT выдан пользователю andrey678a@gmail.com и помещён в cookie + header
+2026-02-15T19:50:14.700+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /api/auth/me
+2026-02-15T19:50:14.701+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
+2026-02-15T19:50:14.701+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Authorization header: Bearer eyJhbGciOiJIUzUxMiJ9.ey...
+2026-02-15T19:50:14.701+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Extracted token from Bearer header
+2026-02-15T19:50:14.701+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Processing request: GET /api/auth/me
+2026-02-15T19:50:14.701+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-02-15T19:50:14.703+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Token is valid. Email: andrey678a@gmail.com
+2026-02-15T19:50:14.703+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:50:14.703+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:50:14.704+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • identifier = andrey678a@gmail.com
+2026-02-15T19:50:14.704+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomUserDetailsService  : Попытка загрузить пользователя по identifier: andrey678a@gmail.com
+2026-02-15T19:50:14.706+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] org.hibernate.SQL                        : select u1_0.id,u1_0.is_active,u1_0.created_at,u1_0.email,u1_0.password,u1_0.reset_token,u1_0.reset_token_created_at,u1_0.role,u1_0.updated_at,u1_0.username from users u1_0 where upper(u1_0.email)=upper(?)
+2026-02-15T19:50:14.709+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] c.e.p.s.custom.CustomUserDetailsService  : Пользователь загружен успешно: andrey678a@gmail.com (email: db40fbe5-c5a4-4b6f-b04b-fc8b6df8706c, id: {})
+2026-02-15T19:50:14.709+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:50:14.709+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: CustomUserDetails com.example.project.service.custom.CustomUserDetails@6d8601e7
+2026-02-15T19:50:14.709+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 6 мс
+2026-02-15T19:50:14.709+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: CustomUserDetailsService.loadUserByUsername
+2026-02-15T19:50:14.709+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : User loaded: andrey678a@gmail.com, authorities: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@39d62e96]
+2026-02-15T19:50:14.709+02:00  INFO 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : ✅ Authentication set for user: andrey678a@gmail.com with roles: [com.example.project.service.custom.CustomUserDetails$$Lambda/0x0000007001926488@156c8351]
+2026-02-15T19:50:14.710+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /api/auth/me
+2026-02-15T19:50:14.710+02:00 DEBUG 11263 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /api/auth/me, shouldNotFilter: false
+2026-02-15T19:50:14.710+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : ┌──▶ ВХОД: AuthRestController.me
+2026-02-15T19:50:14.710+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Параметры:
+2026-02-15T19:50:14.710+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │   • authentication = [PROTECTED]
+2026-02-15T19:50:14.710+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ✓ УСПЕШНО: AuthRestController.me
+2026-02-15T19:50:14.711+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ Результат: ResponseEntity [PROTECTED]
+2026-02-15T19:50:14.711+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : │ ⏱ Время: 0 мс
+2026-02-15T19:50:14.711+02:00  INFO 11263 --- [http-nio-8081-exec-7] c.e.project.log.DetailedLoggingAspect    : └──▶ ВЫХОД: AuthRestController.me
+2026-02-15T19:50:48.977+02:00  INFO 11263 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-15T19:50:48.979+02:00  INFO 11263 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-15T19:50:48.980+02:00  INFO 11263 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
