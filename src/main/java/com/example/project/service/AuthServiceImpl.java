@@ -77,7 +77,7 @@ public class AuthServiceImpl implements Register, Login {
             throw new InvalidPasswordException("Неверный пароль.");
         }
 
-        String token = jwtUtil.generateToken(user.getUsername(), List.of(user.getRole()));
+        String token = jwtUtil.generateToken(user.getEmail(), user.getId(), List.of(user.getRole()));
 
 
         return UserResponseDTO.builder()

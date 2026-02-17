@@ -19,6 +19,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 
 @Slf4j
 @Component
@@ -55,15 +56,19 @@ public class JwtFilter extends OncePerRequestFilter {
         }
 
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            UUID userId = jwtUtil.getUserIdFromToken(token);
             UserDetails userDetails = userDetailsService.loadUserByUsername(email);
-            log.debug("User loaded: {}, authorities: {}", userDetails.getUsername(), userDetails.getAuthorities());
+
+            log.debug("User loaded: {}, userId: {}, authorities: {}",
+                    userDetails.getUsername(), userId, userDetails.getAuthorities());
 
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                    userDetails, null, userDetails.getAuthorities());
+                    userId.toString(), null, userDetails.getAuthorities());
 
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            log.info("✅ Authentication set for user: {} with roles: {}", email, userDetails.getAuthorities());
+            log.info("✅ Authentication set for user: {} (userId: {}) with roles: {}",
+                    email, userId, userDetails.getAuthorities());
         } else if (email == null) {
             log.warn("❌ Email is null, authentication not set");
         } else {
@@ -72,6 +77,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(request, response);
     }
+
 
     private String extractJwtFromRequest(HttpServletRequest request) {
         String bearerToken = request.getHeader("Authorization");

@@ -7,6 +7,7 @@ import com.example.project.dto.UserResponseDTO;
 import com.example.project.entity.User;
 import com.example.project.enums.Role;
 import com.example.project.filters.JwtFilter;
+import com.example.project.repository.UserRepository;
 import com.example.project.service.AuthServiceImpl;
 import com.example.project.service.custom.CustomUserDetails;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,8 +21,11 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.TestingAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import static org.mockito.Mockito.*;
@@ -41,6 +45,9 @@ class AuthRestControllerTest {
 
     @MockBean
     private AuthServiceImpl authService;
+
+    @MockBean
+    private UserRepository userRepository;
 
     // ============================
     // REGISTER
@@ -223,8 +230,15 @@ class AuthRestControllerTest {
         user.setEmail("test@test.com");
         user.setRole(Role.USER);
 
-        CustomUserDetails userDetails = new CustomUserDetails(user);
-        Authentication auth = new TestingAuthenticationToken(userDetails, null);
+        when(userRepository.findById(UUID.fromString("76d87ded-3e92-490b-a750-8d07e3b6be6d")))
+                .thenReturn(Optional.of(user));
+
+        Authentication auth = new TestingAuthenticationToken(
+                "76d87ded-3e92-490b-a750-8d07e3b6be6d",
+                null,
+                List.of(new SimpleGrantedAuthority("USER"))
+        );
+        auth.setAuthenticated(true);
 
         mockMvc.perform(get("/api/auth/me")
                         .principal(auth))
@@ -233,6 +247,7 @@ class AuthRestControllerTest {
                 .andExpect(jsonPath("$.email").value("test@test.com"))
                 .andExpect(jsonPath("$.role").value("USER"));
     }
+
 
     @Test
     void me_withAnonymousUser_shouldReturn401() throws Exception {

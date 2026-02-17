@@ -13,6 +13,7 @@ import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -28,19 +29,22 @@ public class JwtUtil {
         return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateToken(String email, List<Role> roles) {
+    public String generateToken(String email, UUID userId, List<Role> roles) {
+
         List<String> authorities = roles.stream()
                 .map(Enum::name)
                 .collect(Collectors.toList());
 
         return Jwts.builder()
                 .setSubject(email)
+                .claim("userId", userId.toString())
                 .claim("authorities", authorities)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS512)
                 .compact();
     }
+
 
     public String getEmailFromToken(String token) {
         return getClaims(token).getSubject();
@@ -72,6 +76,12 @@ public class JwtUtil {
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
+    }
+
+    public UUID getUserIdFromToken(String token) {
+        Claims claims = getClaims(token);
+        String userId = claims.get("userId", String.class);
+        return UUID.fromString(userId);
     }
 }
 

@@ -110,8 +110,12 @@ class AuthServiceImplTest {
         when(passwordEncoder.matches(dto.getPassword(), user.getPassword()))
                 .thenReturn(true);
 
-        when(jwtUtil.generateToken(user.getUsername(), List.of(user.getRole())))
-                .thenReturn("jwt-token");
+        when(jwtUtil.generateToken(
+                user.getEmail(),
+                user.getId(),
+                List.of(user.getRole())
+        )).thenReturn("jwt-token");
+
 
         UserResponseDTO response = authService.loginUser(dto);
 
@@ -121,7 +125,7 @@ class AuthServiceImplTest {
         assertEquals("USER", response.getRole());
         assertEquals("jwt-token", response.getToken());
 
-        verify(jwtUtil).generateToken(user.getUsername(), List.of(user.getRole()));
+        verify(jwtUtil).generateToken(user.getEmail(), user.getId(), List.of(user.getRole()));
     }
 
     @Test
@@ -138,7 +142,7 @@ class AuthServiceImplTest {
                 () -> authService.loginUser(dto));
 
         verify(passwordEncoder, never()).matches(any(), any());
-        verify(jwtUtil, never()).generateToken(any(), any());
+        verify(jwtUtil, never()).generateToken(any(), any(), any());
     }
 
     @Test
@@ -157,7 +161,7 @@ class AuthServiceImplTest {
         assertThrows(InvalidPasswordException.class,
                 () -> authService.loginUser(dto));
 
-        verify(jwtUtil, never()).generateToken(any(), any());
+        verify(jwtUtil, never()).generateToken(any(), any(), any());
     }
 
     // ============================
@@ -228,7 +232,11 @@ class AuthServiceImplTest {
 
         when(userRepository.findByEmail(dto.getEmail())).thenReturn(Optional.of(user));
         when(passwordEncoder.matches(dto.getPassword(), user.getPassword())).thenReturn(true);
-        when(jwtUtil.generateToken(user.getUsername(), List.of(user.getRole()))).thenReturn("jwt-token-admin");
+        when(jwtUtil.generateToken(
+                user.getEmail(),
+                user.getId(),
+                List.of(user.getRole())
+        )).thenReturn("jwt-token-admin");
 
         UserResponseDTO response = authService.loginUser(dto);
 

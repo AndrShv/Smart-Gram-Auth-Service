@@ -6,6 +6,8 @@ package com.example.project.rest;
 import com.example.project.dto.UserLoginDTO;
 import com.example.project.dto.UserRegisterDTO;
 import com.example.project.dto.UserResponseDTO;
+import com.example.project.entity.User;
+import com.example.project.repository.UserRepository;
 import com.example.project.service.AuthServiceImpl;
 import com.example.project.service.custom.CustomUserDetails;
 import jakarta.validation.Valid;
@@ -16,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -23,6 +28,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthRestController {
 
     private final AuthServiceImpl authService;
+    private final UserRepository userRepository;
 
 
     @PostMapping("/register")
@@ -47,16 +53,23 @@ public class AuthRestController {
 
     @GetMapping("/me")
     public ResponseEntity<UserResponseDTO> me(Authentication authentication) {
-        if (authentication == null || !(authentication.getPrincipal() instanceof CustomUserDetails)) {
+        if (authentication == null || !authentication.isAuthenticated()) {
             return ResponseEntity.status(401).build();
         }
 
-        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        String userId = (String) authentication.getPrincipal();
+
+        User user = userRepository.findById(UUID.fromString(userId))
+                .orElse(null);
+
+        if (user == null) {
+            return ResponseEntity.status(401).build();
+        }
 
         UserResponseDTO response = UserResponseDTO.builder()
-                .id(String.valueOf(userDetails.getUser().getId()))
-                .email(userDetails.getUser().getEmail())
-                .role(String.valueOf(userDetails.getUser().getRole()))
+                .id(String.valueOf(user.getId()))
+                .email(user.getEmail())
+                .role(String.valueOf(user.getRole()))
                 .build();
 
         return ResponseEntity.ok(response);

@@ -34,6 +34,7 @@ public class JwtLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         String token = jwtUtil.generateToken(
                 user.getEmail(),
+                user.getId(),
                 java.util.List.of(user.getRole())
         );
 
