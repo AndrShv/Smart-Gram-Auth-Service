@@ -68,6 +68,7 @@ public class AuthRestController {
 
         UserResponseDTO response = UserResponseDTO.builder()
                 .id(String.valueOf(user.getId()))
+                .username(user.getUsername())
                 .email(user.getEmail())
                 .role(String.valueOf(user.getRole()))
                 .build();
