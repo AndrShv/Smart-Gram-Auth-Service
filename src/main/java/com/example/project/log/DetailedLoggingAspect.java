@@ -1,6 +1,5 @@
 package com.example.project.log;
 
-
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -21,18 +20,16 @@ public class DetailedLoggingAspect {
     private static final ThreadLocal<Integer> callDepth = ThreadLocal.withInitial(() -> 0);
 
     // ------------------------- POINTCUTS -------------------------
-
-    @Pointcut("execution(* com.example.project.service..*(..))")
+    @Pointcut("execution(public * com.example.project.service..*(..))")
     public void serviceLayer() {}
 
-    @Pointcut("execution(* com.example.project.controller..*(..))")
+    @Pointcut("execution(public * com.example.project.controller..*(..)) || execution(public * com.example.project.rest..*(..))")
     public void controllerLayer() {}
 
     @Pointcut("serviceLayer() || controllerLayer()")
     public void applicationLayers() {}
 
     // ------------------------- ADVICE -------------------------
-
     @Around("applicationLayers()")
     public Object logMethodExecution(ProceedingJoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
@@ -42,19 +39,16 @@ public class DetailedLoggingAspect {
 
         int depth = callDepth.get();
         callDepth.set(depth + 1);
-        String indent = getIndent(depth);
+        String indent = "  ".repeat(depth);
 
         long startTime = System.currentTimeMillis();
         Object result = null;
 
         try {
             logMethodEntry(joinPoint, indent, className, methodName);
-
             result = joinPoint.proceed();
-
             long executionTime = System.currentTimeMillis() - startTime;
             logMethodSuccess(result, indent, className, methodName, executionTime);
-
             return result;
 
         } catch (Throwable e) {
@@ -68,11 +62,8 @@ public class DetailedLoggingAspect {
         }
     }
 
-    // ------------------------- PRIVATE LOGIC -------------------------
-
     private void logMethodEntry(JoinPoint joinPoint, String indent, String className, String methodName) {
-        log.info("{}┌─────────────────────────────────────────────────", indent);
-        log.info("{}│ ➤ ВХОД: {}.{}", indent, className, methodName);
+        log.info("{}┌──▶ ВХОД: {}.{}", indent, className, methodName);
 
         Object[] args = joinPoint.getArgs();
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
@@ -91,8 +82,7 @@ public class DetailedLoggingAspect {
                 } else if (isSimpleType(arg)) {
                     log.info("{}│   • {} = {}", indent, paramName, arg);
                 } else {
-                    log.info("{}│   • {} = {} {}", indent, paramName,
-                            arg.getClass().getSimpleName(), arg);
+                    log.info("{}│   • {} = {} {}", indent, paramName, arg.getClass().getSimpleName(), arg);
                 }
             }
         } else {
@@ -102,7 +92,6 @@ public class DetailedLoggingAspect {
 
     private void logMethodSuccess(Object result, String indent, String className,
                                   String methodName, long executionTime) {
-        log.info("{}│", indent);
         log.info("{}│ ✓ УСПЕШНО: {}.{}", indent, className, methodName);
 
         if (result != null) {
@@ -126,7 +115,6 @@ public class DetailedLoggingAspect {
 
     private void logMethodError(Throwable e, String indent, String className,
                                 String methodName, long executionTime) {
-        log.error("{}│", indent);
         log.error("{}│ ✗ ОШИБКА: {}.{}", indent, className, methodName);
         log.error("{}│ Исключение: {}", indent, e.getClass().getSimpleName());
         log.error("{}│ Сообщение: {}", indent, e.getMessage());
@@ -134,11 +122,7 @@ public class DetailedLoggingAspect {
     }
 
     private void logMethodExit(String indent, String className, String methodName) {
-        log.info("{}└─────────────────────────────────────────────────", indent);
-    }
-
-    private String getIndent(int depth) {
-        return "  ".repeat(depth);
+        log.info("{}└──▶ ВЫХОД: {}.{}", indent, className, methodName);
     }
 
     private boolean isSensitiveData(String name, Object value) {
