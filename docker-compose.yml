@@ -12,17 +12,5 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
-  keycloak:
-    image: quay.io/keycloak/keycloak:21.1.1
-    container_name: keycloak
-    environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-    command: start-dev
-    ports:
-      - "8090:8080"
-    depends_on:
-      - mysql
-
 volumes:
   mysql_data:
