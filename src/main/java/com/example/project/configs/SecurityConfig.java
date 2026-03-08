@@ -43,7 +43,9 @@ public class SecurityConfig {
                                 "/images/**",
                                 "/js/**"
                         ).permitAll()
+                        .requestMatchers("/favicon.ico").permitAll()
                         .anyRequest().authenticated()
+
                 )
                 .formLogin(form -> form
                         .loginPage("/auth/login")
