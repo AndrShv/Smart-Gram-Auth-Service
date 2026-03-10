@@ -1,19 +1,19 @@
 package com.example.project.service;
 
-
 import com.example.project.entity.User;
 import com.example.project.exceptions.EmailSendingExeption;
 import com.example.project.exceptions.InvalidTokenException;
 import com.example.project.exceptions.UserNotFoundByEmailException;
+import com.example.project.interfaces.EmailService;
+import com.example.project.metrics.AuthMetricsService;
+import com.example.project.metrics.PerformanceMetricsService;
 import com.example.project.repository.UserRepository;
-import jakarta.mail.internet.MimeMessage;
+import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.*;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
@@ -30,18 +30,33 @@ class PasswordResetServiceImplTest {
     private UserRepository userRepository;
 
     @Mock
-    private JavaMailSender mailSender;
-
-    @Mock
     private PasswordEncoder passwordEncoder;
 
-    @InjectMocks
+    @Mock
+    private AuthMetricsService metrics;
+
+    @Mock
+    private EmailService emailService;
+
     private PasswordResetServiceImpl passwordResetService;
 
     private User user;
 
     @BeforeEach
     void setUp() {
+        // реальный MeterRegistry — таймеры прозрачно выполняют лямбду,
+        // исключения внутри пробрасываются как есть, без обёртки
+        PerformanceMetricsService performanceMetrics =
+                new PerformanceMetricsService(new SimpleMeterRegistry());
+
+        passwordResetService = new PasswordResetServiceImpl(
+                userRepository,
+                passwordEncoder,
+                metrics,
+                performanceMetrics,
+                emailService
+        );
+
         user = User.builder()
                 .id(UUID.randomUUID())
                 .email("andrey678a@gmail.com")
@@ -55,12 +70,9 @@ class PasswordResetServiceImplTest {
 
     @Test
     void sendResetToken_success() {
-        when(userRepository.findByEmail(user.getEmail()))
-                .thenReturn(Optional.of(user));
-
-        doNothing().when(mailSender).send(any(SimpleMailMessage.class));
-        when(userRepository.save(any(User.class)))
-                .thenAnswer(inv -> inv.getArgument(0));
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
+        when(userRepository.save(any(User.class))).thenAnswer(inv -> inv.getArgument(0));
+        doNothing().when(emailService).sendPasswordResetCode(anyString(), anyString());
 
         String token = passwordResetService.sendResetToken(user.getEmail());
 
@@ -69,31 +81,50 @@ class PasswordResetServiceImplTest {
         assertNotNull(user.getResetToken());
         assertNotNull(user.getResetTokenCreatedAt());
 
-        verify(mailSender).send(any(SimpleMailMessage.class));
+        verify(emailService).sendPasswordResetCode(eq(user.getEmail()), anyString());
         verify(userRepository).save(user);
+        verify(metrics).incrementResetTokenSent();
     }
 
     @Test
     void sendResetToken_userNotFound() {
-        when(userRepository.findByEmail("andrey678a@gmail.com"))
-                .thenReturn(Optional.empty());
+        when(userRepository.findByEmail("andrey678a@gmail.com")).thenReturn(Optional.empty());
 
         assertThrows(UserNotFoundByEmailException.class,
                 () -> passwordResetService.sendResetToken("andrey678a@gmail.com"));
 
-        verify(mailSender, never()).send((MimeMessage) any());
+        verify(emailService, never()).sendPasswordResetCode(any(), any());
     }
 
     @Test
     void sendResetToken_emailSendingError() {
-        when(userRepository.findByEmail(user.getEmail()))
-                .thenReturn(Optional.of(user));
-
-        doThrow(new RuntimeException("SMTP error"))
-                .when(mailSender).send(any(SimpleMailMessage.class));
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
+        when(userRepository.save(any(User.class))).thenAnswer(inv -> inv.getArgument(0));
+        doThrow(new EmailSendingExeption("Email sending failed", new RuntimeException("SMTP error")))
+                .when(emailService).sendPasswordResetCode(anyString(), anyString());
 
         assertThrows(EmailSendingExeption.class,
                 () -> passwordResetService.sendResetToken(user.getEmail()));
+    }
+
+    @Test
+    void sendResetToken_emptyEmail_shouldThrowException() {
+        when(userRepository.findByEmail("")).thenReturn(Optional.empty());
+
+        assertThrows(UserNotFoundByEmailException.class,
+                () -> passwordResetService.sendResetToken(""));
+    }
+
+    @Test
+    void sendResetToken_multipleRequests_generateDifferentTokens() {
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
+        doNothing().when(emailService).sendPasswordResetCode(anyString(), anyString());
+        when(userRepository.save(any(User.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        String token1 = passwordResetService.sendResetToken(user.getEmail());
+        String token2 = passwordResetService.sendResetToken(user.getEmail());
+
+        assertNotEquals(token1, token2);
     }
 
     // ============================
@@ -105,11 +136,8 @@ class PasswordResetServiceImplTest {
         user.setResetToken("123456");
         user.setResetTokenCreatedAt(LocalDateTime.now().minusSeconds(30));
 
-        when(userRepository.findByResetToken("123456"))
-                .thenReturn(Optional.of(user));
-
-        when(passwordEncoder.encode("newPassword"))
-                .thenReturn("encoded-password");
+        when(userRepository.findByResetToken("123456")).thenReturn(Optional.of(user));
+        when(passwordEncoder.encode("newPassword")).thenReturn("encoded-password");
 
         passwordResetService.resetPassword("123456", "newPassword");
 
@@ -118,12 +146,12 @@ class PasswordResetServiceImplTest {
         assertNull(user.getResetTokenCreatedAt());
 
         verify(userRepository).save(user);
+        verify(metrics).incrementPasswordReset();
     }
 
     @Test
     void resetPassword_invalidToken() {
-        when(userRepository.findByResetToken("wrong"))
-                .thenReturn(Optional.empty());
+        when(userRepository.findByResetToken("wrong")).thenReturn(Optional.empty());
 
         assertThrows(InvalidTokenException.class,
                 () -> passwordResetService.resetPassword("wrong", "password"));
@@ -136,43 +164,13 @@ class PasswordResetServiceImplTest {
         user.setResetToken("123456");
         user.setResetTokenCreatedAt(LocalDateTime.now().minusMinutes(5));
 
-        when(userRepository.findByResetToken("123456"))
-                .thenReturn(Optional.of(user));
+        when(userRepository.findByResetToken("123456")).thenReturn(Optional.of(user));
 
         assertThrows(InvalidTokenException.class,
                 () -> passwordResetService.resetPassword("123456", "password"));
 
         verify(userRepository, never()).save(any());
     }
-
-    // ============================
-// sendResetToken - edge cases
-// ============================
-
-    @Test
-    void sendResetToken_emptyEmail_shouldThrowException() {
-        assertThrows(UserNotFoundByEmailException.class,
-                () -> passwordResetService.sendResetToken(""));
-    }
-
-    @Test
-    void sendResetToken_multipleRequests_generateDifferentTokens() {
-        when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
-        doNothing().when(mailSender).send(any(SimpleMailMessage.class));
-        when(userRepository.save(any(User.class))).thenAnswer(inv -> inv.getArgument(0));
-
-        String token1 = passwordResetService.sendResetToken(user.getEmail());
-        String oldToken = user.getResetToken();
-
-        String token2 = passwordResetService.sendResetToken(user.getEmail());
-
-        assertNotEquals(token1, token2);
-        assertNotEquals(oldToken, token2);
-    }
-
-// ============================
-// resetPassword - edge cases
-// ============================
 
     @Test
     void resetPassword_emptyNewPassword_shouldEncodeEmptyPassword() {
@@ -188,6 +186,7 @@ class PasswordResetServiceImplTest {
         assertNull(user.getResetToken());
         assertNull(user.getResetTokenCreatedAt());
     }
+
     @Test
     void resetPassword_tokenJustBeforeExpiry_shouldSucceed() {
         user.setResetToken("123456");
@@ -202,8 +201,4 @@ class PasswordResetServiceImplTest {
         assertNull(user.getResetToken());
         assertNull(user.getResetTokenCreatedAt());
     }
-
-
-
 }
-

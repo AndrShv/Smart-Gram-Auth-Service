@@ -1,7 +1,5 @@
 package com.example.project.service;
 
-
-
 import com.example.project.dto.UserLoginDTO;
 import com.example.project.dto.UserRegisterDTO;
 import com.example.project.dto.UserResponseDTO;
@@ -12,6 +10,8 @@ import com.example.project.exceptions.UserAlreadyExistsException;
 import com.example.project.exceptions.UserNotFoundByEmailException;
 import com.example.project.interfaces.Login;
 import com.example.project.interfaces.Register;
+import com.example.project.metrics.AuthMetricsService;
+import com.example.project.metrics.PerformanceMetricsService;
 import com.example.project.repository.UserRepository;
 import com.example.project.utils.JwtUtil;
 import lombok.RequiredArgsConstructor;
@@ -19,76 +19,78 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements Register, Login {
+
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
-
+    private final AuthMetricsService metrics;
+    private final PerformanceMetricsService performanceMetrics;
 
     @Override
     public void registerUser(UserRegisterDTO dto) {
-        log.info("Регистрация пользователя: {}", dto.getEmail());
+        performanceMetrics.registerTimer().record(() -> {
+            log.info("Регистрация пользователя: {}", dto.getEmail());
 
-        if (userRepository.existsByEmail(dto.getEmail())) {
-            throw new UserAlreadyExistsException("Пользователь с таким email уже существует");
-        }
-
-        Role role;
-        if (dto.getRole() != null) {
+            if (userRepository.existsByEmail(dto.getEmail())) {
+                throw new UserAlreadyExistsException("Пользователь уже существует");
+            }
+            Role role;
             try {
-                role = Role.valueOf(dto.getRole().toUpperCase());
+                role = dto.getRole() != null ? Role.valueOf(dto.getRole().toUpperCase()) : Role.USER;
             } catch (IllegalArgumentException e) {
-                log.warn("Неизвестная роль: {}, устанавливаем по умолчанию USER", dto.getRole());
+                log.warn("Неизвестная роль '{}', используем USER", dto.getRole());
                 role = Role.USER;
             }
-        } else {
-            role = Role.USER;
-        }
 
-        User user = User.builder()
-                .username(dto.getUsername())
-                .email(dto.getEmail())
-                .password(passwordEncoder.encode(dto.getPassword()))
-                .role(role)
-                .active(true)
-                .build();
+            User user = User.builder()
+                    .username(dto.getUsername())
+                    .email(dto.getEmail())
+                    .password(passwordEncoder.encode(dto.getPassword()))
+                    .role(role)
+                    .active(true)
+                    .build();
 
-        User savedUser = userRepository.save(user);
-        log.info("Пользователь сохранен: {}", savedUser.getEmail());
+            userRepository.save(user);
+            metrics.incrementRegister();
 
-
+            log.info("Пользователь успешно зарегистрирован {}", dto.getEmail());
+        });
     }
 
     @Override
-    public UserResponseDTO loginUser(UserLoginDTO dto) {
-        log.info("Попытка входа: {}", dto.getEmail());
+    public UserResponseDTO loginUser(UserLoginDTO dto) throws Exception {
+        return performanceMetrics.loginTimer().recordCallable(() -> {
+            log.info("Попытка входа: {}", dto.getEmail());
 
-        User user = userRepository.findByEmail(dto.getEmail())
-                .orElseThrow(() -> new UserNotFoundByEmailException("Пользователь с таким email не найден."));
+            User user = userRepository.findByEmail(dto.getEmail())
+                    .orElseThrow(() -> new UserNotFoundByEmailException("User not found"));
 
-        if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
-            throw new InvalidPasswordException("Неверный пароль.");
-        }
+            if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
+                metrics.incrementLoginFailed();
+                throw new InvalidPasswordException("Неверный пароль");
+            }
 
-        String token = jwtUtil.generateToken(user.getEmail(), user.getId(), List.of(user.getRole()));
+            String token = jwtUtil.generateToken(
+                    user.getEmail(),
+                    user.getId(),
+                    List.of(user.getRole())
+            );
 
+            metrics.incrementLoginSuccess();
 
-        return UserResponseDTO.builder()
-                .id(String.valueOf(user.getId()))
-                .username(user.getUsername())
-                .email(user.getEmail())
-                .role(user.getRole().name())
-                .token(token)
-                .build();
+            return UserResponseDTO.builder()
+                    .id(String.valueOf(user.getId()))
+                    .username(user.getUsername())
+                    .email(user.getEmail())
+                    .role(user.getRole().name())
+                    .token(token)
+                    .build();
+        });
     }
-
-
 }
-

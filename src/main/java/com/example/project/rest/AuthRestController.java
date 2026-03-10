@@ -1,22 +1,16 @@
 package com.example.project.rest;
 
-
-
-
 import com.example.project.dto.UserLoginDTO;
 import com.example.project.dto.UserRegisterDTO;
 import com.example.project.dto.UserResponseDTO;
 import com.example.project.entity.User;
+import com.example.project.metrics.ApiMetricsService;
 import com.example.project.repository.UserRepository;
 import com.example.project.service.AuthServiceImpl;
-import com.example.project.service.custom.CustomUserDetails;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -24,15 +18,15 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-
 public class AuthRestController {
 
     private final AuthServiceImpl authService;
     private final UserRepository userRepository;
-
+    private final ApiMetricsService apiMetrics;
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody @Valid UserRegisterDTO dto) {
+        apiMetrics.registerRequest();
         try {
             authService.registerUser(dto);
             return ResponseEntity.ok("Пользователь успешно зарегистрирован");
@@ -43,6 +37,7 @@ public class AuthRestController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid UserLoginDTO dto) {
+        apiMetrics.loginRequest();
         try {
             UserResponseDTO response = authService.loginUser(dto);
             return ResponseEntity.ok(response);
@@ -58,9 +53,7 @@ public class AuthRestController {
         }
 
         String userId = (String) authentication.getPrincipal();
-
-        User user = userRepository.findById(UUID.fromString(userId))
-                .orElse(null);
+        User user = userRepository.findById(UUID.fromString(userId)).orElse(null);
 
         if (user == null) {
             return ResponseEntity.status(401).build();
@@ -75,8 +68,4 @@ public class AuthRestController {
 
         return ResponseEntity.ok(response);
     }
-
-
 }
-
-

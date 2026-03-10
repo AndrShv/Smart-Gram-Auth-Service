@@ -1,11 +1,12 @@
 package com.example.project.utils;
 
-
 import com.example.project.enums.Role;
+import com.example.project.metrics.JwtMetricsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class JwtUtil {
 
     @Value("${jwt.secret}")
@@ -25,17 +27,18 @@ public class JwtUtil {
     @Value("${jwt.expirationMs}")
     private long jwtExpirationMs;
 
+    private final JwtMetricsService jwtMetrics;
+
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
     public String generateToken(String email, UUID userId, List<Role> roles) {
-
         List<String> authorities = roles.stream()
                 .map(Enum::name)
                 .collect(Collectors.toList());
 
-        return Jwts.builder()
+        String token = Jwts.builder()
                 .setSubject(email)
                 .claim("userId", userId.toString())
                 .claim("authorities", authorities)
@@ -43,8 +46,10 @@ public class JwtUtil {
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS512)
                 .compact();
-    }
 
+        jwtMetrics.incrementGenerated();
+        return token;
+    }
 
     public String getEmailFromToken(String token) {
         return getClaims(token).getSubject();
@@ -64,8 +69,10 @@ public class JwtUtil {
     public boolean validateToken(String token) {
         try {
             getClaims(token);
+            jwtMetrics.incrementValidated();
             return true;
         } catch (Exception e) {
+            jwtMetrics.incrementInvalid();
             return false;
         }
     }
@@ -84,4 +91,3 @@ public class JwtUtil {
         return UUID.fromString(userId);
     }
 }
-

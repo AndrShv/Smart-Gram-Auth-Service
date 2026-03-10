@@ -44,6 +44,8 @@ public class SecurityConfig {
                                 "/js/**"
                         ).permitAll()
                         .requestMatchers("/favicon.ico").permitAll()
+                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/api/email/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
 
                 )
