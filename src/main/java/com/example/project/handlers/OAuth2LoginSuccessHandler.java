@@ -45,9 +45,8 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
 
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
-                String identifier = user.getEmail();
                 List<Role> roles = List.of(user.getRole());
-                String token = jwtUtil.generateToken(identifier, roles);
+                String token = jwtUtil.generateToken(user.getEmail(), user.getId(), roles);
 
                 // --- Cookie ---
                 Cookie jwtCookie = new Cookie("jwt", token);
@@ -65,7 +64,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
             }
         }
 
-        response.sendRedirect("http://localhost:8082/main");
+        response.sendRedirect("http://localhost:8082/profiles/create");
     }
 
 }
