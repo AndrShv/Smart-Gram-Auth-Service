@@ -7,6 +7,7 @@ import com.example.project.dto.UserResponseDTO;
 import com.example.project.entity.User;
 import com.example.project.enums.Role;
 import com.example.project.filters.JwtFilter;
+import com.example.project.metrics.ApiMetricsService;
 import com.example.project.repository.UserRepository;
 import com.example.project.service.AuthServiceImpl;
 import com.example.project.service.custom.CustomUserDetails;
@@ -48,6 +49,9 @@ class AuthRestControllerTest {
 
     @MockBean
     private UserRepository userRepository;
+
+    @MockBean
+    private ApiMetricsService apiMetrics;
 
     // ============================
     // REGISTER

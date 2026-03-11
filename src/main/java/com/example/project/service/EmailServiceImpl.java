@@ -23,7 +23,6 @@ public class EmailServiceImpl implements EmailService {
     @CircuitBreaker(name = "emailService", fallbackMethod = "emailFallback")
     @Retry(name = "emailService")
     public void sendPasswordResetCode(String to, String code) {
-
         log.info("Отправка письма сброса пароля на: {}", to);
 
         SimpleMailMessage message = new SimpleMailMessage();
@@ -31,13 +30,16 @@ public class EmailServiceImpl implements EmailService {
         message.setSubject("Password reset");
         message.setText("Ваш код: " + code);
 
-        mailSender.send(message);
-
-        emailMetrics.sent();
-
-        log.info("Письмо успешно отправлено на: {}", to);
+        try {
+            mailSender.send(message);
+            emailMetrics.sent();
+            log.info("Письмо успешно отправлено на: {}", to);
+        } catch (Exception ex) {
+            emailMetrics.failed();
+            log.error("Ошибка отправки письма на {}: {}", to, ex.getMessage());
+            throw new EmailSendingExeption("Email service unavailable", ex);
+        }
     }
-
     @Override
     public void emailFallback(String to, String code, Throwable ex) {
 
