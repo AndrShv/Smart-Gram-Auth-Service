@@ -34,6 +34,7 @@ public class JwtLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         String token = jwtUtil.generateToken(
                 user.getEmail(),
+                user.getId(),
                 java.util.List.of(user.getRole())
         );
 
@@ -44,6 +45,6 @@ public class JwtLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         response.addCookie(cookie);
 
-        response.sendRedirect("http://localhost:8082/main");
+        response.sendRedirect("http://localhost:8082/profiles/create");
     }
 }
