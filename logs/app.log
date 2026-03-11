@@ -235,3 +235,406 @@
 2026-03-11T18:21:04.025+02:00  INFO 25781 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-03-11T18:21:04.027+02:00  INFO 25781 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-03-11T18:21:04.028+02:00  INFO 25781 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-11T22:19:51.617+02:00  INFO 30043 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 30043 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-03-11T22:19:51.618+02:00 DEBUG 30043 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-03-11T22:19:51.618+02:00  INFO 30043 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-03-11T22:19:51.633+02:00  INFO 30043 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-11T22:19:51.633+02:00  INFO 30043 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-11T22:19:52.022+02:00  INFO 30043 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-11T22:19:52.041+02:00  INFO 30043 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2026-03-11T22:19:52.414+02:00  INFO 30043 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-03-11T22:19:52.419+02:00  INFO 30043 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-11T22:19:52.419+02:00  INFO 30043 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-03-11T22:19:52.439+02:00  INFO 30043 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-11T22:19:52.440+02:00  INFO 30043 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 807 ms
+2026-03-11T22:19:52.619+02:00  INFO 30043 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-11T22:19:52.643+02:00  INFO 30043 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-03-11T22:19:52.654+02:00  INFO 30043 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-11T22:19:52.714+02:00  INFO 30043 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-11T22:19:52.723+02:00  INFO 30043 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-11T22:19:52.790+02:00  INFO 30043 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2dff71d
+2026-03-11T22:19:52.791+02:00  INFO 30043 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-11T22:19:53.076+02:00  INFO 30043 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-11T22:19:53.098+02:00  INFO 30043 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-11T22:19:53.305+02:00 DEBUG 30043 --- [restartedMain] com.example.project.filters.JwtFilter    : Filter 'jwtFilter' configured for use
+2026-03-11T22:19:53.545+02:00  WARN 30043 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-11T22:19:53.855+02:00  INFO 30043 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-03-11T22:19:53.913+02:00  INFO 30043 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a9e6c8b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f6d2785, org.springframework.security.web.context.SecurityContextHolderFilter@1de0a47b, org.springframework.security.web.header.HeaderWriterFilter@39a7beb8, org.springframework.web.filter.CorsFilter@4a565c7b, org.springframework.security.web.authentication.logout.LogoutFilter@4e07765e, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@6cab66e5, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4dced519, com.example.project.filters.JwtFilter@4878a001, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@26e72779, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bd087ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f6c2a1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3db450e6, org.springframework.security.web.session.SessionManagementFilter@1ba26431, org.springframework.security.web.access.ExceptionTranslationFilter@2258e9fb, org.springframework.security.web.access.intercept.AuthorizationFilter@299bf071]
+2026-03-11T22:19:54.367+02:00  INFO 30043 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-11T22:19:54.395+02:00  INFO 30043 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-03-11T22:19:54.402+02:00  INFO 30043 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 2.919 seconds (process running for 3.073)
+2026-03-11T22:19:54.524+02:00  INFO 30043 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-11T22:19:54.525+02:00  INFO 30043 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-11T22:19:54.526+02:00  INFO 30043 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-11T22:19:54.533+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:19:54.536+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:19:54.537+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:19:54.539+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:19:54.539+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:19:59.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:19:59.503+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:19:59.504+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:19:59.506+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:19:59.506+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:00.739+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-03-11T22:20:00.740+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-03-11T22:20:00.741+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:00.742+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-03-11T22:20:00.742+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-03-11T22:20:00.874+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-03-11T22:20:00.875+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-03-11T22:20:00.878+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:00.879+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:01.220+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-03-11T22:20:01.221+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:01.221+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-03-11T22:20:01.222+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-03-11T22:20:01.223+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-03-11T22:20:01.223+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-03-11T22:20:01.223+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-03-11T22:20:01.223+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-03-11T22:20:01.223+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-03-11T22:20:01.276+02:00  WARN 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Token validation failed
+2026-03-11T22:20:01.276+02:00  WARN 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-03-11T22:20:01.276+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:01.277+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-03-11T22:20:01.277+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:01.278+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:01.278+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:04.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:04.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:04.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:04.501+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:04.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:05.735+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /auth/register
+2026-03-11T22:20:05.737+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-03-11T22:20:05.737+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:05.738+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /auth/register
+2026-03-11T22:20:05.738+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-03-11T22:20:05.763+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /css/register.css
+2026-03-11T22:20:05.764+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /js/register.js
+2026-03-11T22:20:05.764+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-03-11T22:20:05.764+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-03-11T22:20:05.764+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:05.764+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:05.765+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /css/register.css
+2026-03-11T22:20:05.765+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /js/register.js
+2026-03-11T22:20:05.765+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-03-11T22:20:05.765+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-03-11T22:20:05.768+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:05.769+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:05.778+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-03-11T22:20:05.779+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-03-11T22:20:05.780+02:00  WARN 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Token validation failed
+2026-03-11T22:20:05.781+02:00  WARN 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-03-11T22:20:05.781+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:05.781+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-03-11T22:20:05.781+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:05.784+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:05.784+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:09.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:09.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:09.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:09.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:09.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:10.314+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-03-11T22:20:10.316+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:10.316+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-03-11T22:20:10.316+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-03-11T22:20:10.317+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-03-11T22:20:10.317+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-03-11T22:20:10.317+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-03-11T22:20:10.317+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-03-11T22:20:10.317+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-03-11T22:20:10.319+02:00  WARN 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Token validation failed
+2026-03-11T22:20:10.320+02:00  WARN 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-03-11T22:20:10.321+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:10.323+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-03-11T22:20:10.323+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:10.327+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:10.328+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:13.976+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /oauth2/authorization/google?register
+2026-03-11T22:20:14.007+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.s.web.DefaultRedirectStrategy        : Redirecting to https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=581512564337-kgoa5d4v66bplr2v7hdm83avamcb8tps.apps.googleusercontent.com&scope=openid%20profile%20email&state=-U88rIER2S1e2lTS8hwPuyprKza4vrwrk0yNIltoJu8%3D&redirect_uri=http://localhost:8081/login/oauth2/code/google&nonce=3-J_J3rSy0fbEecVGA98Kv2wWk3CEAuQi_ow17v7vRM
+2026-03-11T22:20:14.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:14.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:14.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:14.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:14.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:16.078+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /auth/register
+2026-03-11T22:20:16.079+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-03-11T22:20:16.079+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:16.080+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /auth/register
+2026-03-11T22:20:16.080+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /auth/register, shouldNotFilter: true
+2026-03-11T22:20:16.115+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /js/register.js
+2026-03-11T22:20:16.115+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /css/register.css
+2026-03-11T22:20:16.115+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-03-11T22:20:16.115+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-03-11T22:20:16.115+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:16.116+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:16.116+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /css/register.css
+2026-03-11T22:20:16.116+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /css/register.css, shouldNotFilter: true
+2026-03-11T22:20:16.116+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /js/register.js
+2026-03-11T22:20:16.116+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /js/register.js, shouldNotFilter: true
+2026-03-11T22:20:16.117+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:16.117+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:16.144+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-03-11T22:20:16.145+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:16.145+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-03-11T22:20:16.145+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-03-11T22:20:16.145+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-03-11T22:20:16.145+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-03-11T22:20:16.146+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-03-11T22:20:16.146+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-03-11T22:20:16.146+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-03-11T22:20:16.148+02:00  WARN 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Token validation failed
+2026-03-11T22:20:16.148+02:00  WARN 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-03-11T22:20:16.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:16.149+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-03-11T22:20:16.149+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:16.152+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:16.153+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:19.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:19.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:19.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:19.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:19.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:20.123+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /auth/login
+2026-03-11T22:20:20.124+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-03-11T22:20:20.125+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:20.125+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /auth/login
+2026-03-11T22:20:20.125+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /auth/login, shouldNotFilter: true
+2026-03-11T22:20:20.146+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /js/login.js
+2026-03-11T22:20:20.146+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/login.css
+2026-03-11T22:20:20.147+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-03-11T22:20:20.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:20.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-03-11T22:20:20.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:20.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /js/login.js
+2026-03-11T22:20:20.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/login.css
+2026-03-11T22:20:20.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /js/login.js, shouldNotFilter: true
+2026-03-11T22:20:20.148+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /css/login.css, shouldNotFilter: true
+2026-03-11T22:20:20.151+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:20.152+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:20.160+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-03-11T22:20:20.161+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-03-11T22:20:20.162+02:00  WARN 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Token validation failed
+2026-03-11T22:20:20.163+02:00  WARN 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-03-11T22:20:20.163+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:20.164+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-03-11T22:20:20.164+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:20.167+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:20.168+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:22.313+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /auth/forgot-password
+2026-03-11T22:20:22.314+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-03-11T22:20:22.315+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:22.316+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /auth/forgot-password
+2026-03-11T22:20:22.316+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /auth/forgot-password, shouldNotFilter: true
+2026-03-11T22:20:22.343+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/forgot-password.css
+2026-03-11T22:20:22.343+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /js/forgot-password.js
+2026-03-11T22:20:22.344+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-03-11T22:20:22.344+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:22.344+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-03-11T22:20:22.345+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:22.345+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /js/forgot-password.js
+2026-03-11T22:20:22.345+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /js/forgot-password.js, shouldNotFilter: true
+2026-03-11T22:20:22.345+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/forgot-password.css
+2026-03-11T22:20:22.345+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /css/forgot-password.css, shouldNotFilter: true
+2026-03-11T22:20:22.348+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:22.348+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Authorization header: null
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Checking cookies for JWT...
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: Idea-f23fd730 = 88c80325-b0d9-44d4-9...
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Cookie found: jwt = eyJhbGciOiJIUzUxMiJ9...
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : JWT cookie found!
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Processing request: GET /favicon.ico
+2026-03-11T22:20:22.355+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token found: YES (first 20 chars: eyJhbGciOiJIUzUxMiJ9...)
+2026-03-11T22:20:22.357+02:00  WARN 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Token validation failed
+2026-03-11T22:20:22.357+02:00  WARN 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : ❌ Email is null, authentication not set
+2026-03-11T22:20:22.357+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:22.357+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-03-11T22:20:22.358+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /favicon.ico, shouldNotFilter: false
+2026-03-11T22:20:22.360+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-03-11T22:20:22.360+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:24.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:24.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:24.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:24.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:24.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:29.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:29.501+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:29.501+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:29.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:29.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:34.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:34.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-1] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:39.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:39.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:39.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:39.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:39.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:44.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:44.501+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:44.501+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:44.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:44.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:49.494+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:49.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:49.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:49.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:49.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:54.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:54.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:54.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:54.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:54.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:59.504+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:20:59.504+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:20:59.504+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:20:59.505+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:20:59.505+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:04.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:04.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:04.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:04.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:04.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:09.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:09.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:09.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:09.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:09.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:14.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:14.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:14.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:14.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:14.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:19.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:19.501+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:19.501+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:19.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:19.502+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:24.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:24.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:24.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:24.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:24.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-3] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:29.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:29.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:29.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:29.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:29.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-4] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:34.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-5] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:39.494+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:39.494+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:39.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:39.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:39.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-6] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:44.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:44.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:44.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:44.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:44.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-7] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:49.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:49.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:49.499+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:49.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:49.500+02:00 DEBUG 30043 --- [http-nio-8081-exec-8] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:54.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:54.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:54.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:54.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:54.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-9] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:59.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:21:59.495+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:21:59.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:21:59.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:21:59.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-10] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:22:04.496+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /actuator/prometheus
+2026-03-11T22:22:04.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:22:04.497+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:04.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /actuator/prometheus
+2026-03-11T22:22:04.498+02:00 DEBUG 30043 --- [http-nio-8081-exec-2] com.example.project.filters.JwtFilter    : Path: /actuator/prometheus, shouldNotFilter: true
+2026-03-11T22:22:05.066+02:00  INFO 30043 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-11T22:22:05.067+02:00  INFO 30043 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-11T22:22:05.068+02:00  INFO 30043 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-11T22:22:06.101+02:00  INFO 30143 --- [restartedMain] com.example.project.AuthApplication      : Starting AuthApplication using Java 21.0.7 with PID 30143 (/Users/andrshv/IdeaProjects/SmartGram-Auth-Service/target/classes started by andrshv in /Users/andrshv/IdeaProjects/SmartGram-Auth-Service)
+2026-03-11T22:22:06.101+02:00 DEBUG 30143 --- [restartedMain] com.example.project.AuthApplication      : Running with Spring Boot v3.2.1, Spring v6.1.2
+2026-03-11T22:22:06.102+02:00  INFO 30143 --- [restartedMain] com.example.project.AuthApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-03-11T22:22:06.117+02:00  INFO 30143 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-11T22:22:06.118+02:00  INFO 30143 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-11T22:22:06.541+02:00  INFO 30143 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-11T22:22:06.561+02:00  INFO 30143 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2026-03-11T22:22:06.970+02:00  INFO 30143 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-03-11T22:22:06.975+02:00  INFO 30143 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-11T22:22:06.975+02:00  INFO 30143 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2026-03-11T22:22:06.993+02:00  INFO 30143 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-11T22:22:06.994+02:00  INFO 30143 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 876 ms
+2026-03-11T22:22:07.189+02:00  INFO 30143 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-11T22:22:07.209+02:00  INFO 30143 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-03-11T22:22:07.223+02:00  INFO 30143 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-11T22:22:07.287+02:00  INFO 30143 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-11T22:22:07.296+02:00  INFO 30143 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-11T22:22:07.352+02:00  INFO 30143 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f728a7c
+2026-03-11T22:22:07.352+02:00  INFO 30143 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-11T22:22:07.654+02:00  INFO 30143 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-11T22:22:07.676+02:00  INFO 30143 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-11T22:22:08.191+02:00  WARN 30143 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-11T22:22:08.548+02:00  INFO 30143 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-03-11T22:22:08.612+02:00  INFO 30143 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11e6d68d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fde596c, org.springframework.security.web.context.SecurityContextHolderFilter@4a1c0f8a, org.springframework.security.web.header.HeaderWriterFilter@408418ad, org.springframework.web.filter.CorsFilter@1a21a833, org.springframework.security.web.authentication.logout.LogoutFilter@5109926a, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@9a017ee, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7af43708, com.example.project.filters.JwtFilter@74062283, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@47ce1d27, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36e87269, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a63e79a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60b23d39, org.springframework.security.web.session.SessionManagementFilter@51d283cc, org.springframework.security.web.access.ExceptionTranslationFilter@1e0f4c43, org.springframework.security.web.access.intercept.AuthorizationFilter@31259dc1]
+2026-03-11T22:22:09.082+02:00  INFO 30143 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-11T22:22:09.113+02:00  INFO 30143 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2026-03-11T22:22:09.121+02:00  INFO 30143 --- [restartedMain] com.example.project.AuthApplication      : Started AuthApplication in 3.15 seconds (process running for 3.304)
+2026-03-11T22:22:09.545+02:00  INFO 30143 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-11T22:22:09.545+02:00  INFO 30143 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-11T22:22:09.547+02:00  INFO 30143 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-11T22:22:09.564+02:00 DEBUG 30143 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:14.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:19.498+02:00 DEBUG 30143 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:24.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:29.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:34.496+02:00 DEBUG 30143 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:39.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:44.494+02:00 DEBUG 30143 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:49.493+02:00 DEBUG 30143 --- [http-nio-8081-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:54.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:22:59.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:04.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:09.498+02:00 DEBUG 30143 --- [http-nio-8081-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:14.497+02:00 DEBUG 30143 --- [http-nio-8081-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:19.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:24.496+02:00 DEBUG 30143 --- [http-nio-8081-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:29.497+02:00 DEBUG 30143 --- [http-nio-8081-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:34.495+02:00 DEBUG 30143 --- [http-nio-8081-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-03-11T22:23:39.062+02:00  INFO 30143 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-11T22:23:39.064+02:00  INFO 30143 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-11T22:23:39.067+02:00  INFO 30143 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
