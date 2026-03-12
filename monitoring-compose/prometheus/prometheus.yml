@@ -2,9 +2,13 @@ global:
   scrape_interval: 5s
 
 scrape_configs:
+
   - job_name: 'auth-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
       - targets: ['host.docker.internal:8081']
-remote_write:
-  - url: "http://localhost:9090/api/v1/write"
+
+  - job_name: 'profile-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['host.docker.internal:8082']
