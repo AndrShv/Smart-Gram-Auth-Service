@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-auth-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-auth-exporter
+  template:
+    metadata:
+      labels:
+        app: mysql-auth-exporter
+    spec:
+      initContainers:
+        - name: wait-for-mysql
+          image: busybox
+          command: ['sh', '-c', 'until nc -z mysql-auth 3306; do echo waiting for mysql; sleep 2; done;']
+      containers:
+        - name: mysqld-exporter
+          image: prom/mysqld-exporter:latest
+          ports:
+            - containerPort: 9104
+          env:
+            - name: DATA_SOURCE_NAME
+              value: "root:1111@(mysql-auth:3306)/authservice"

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - SmartGram</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            📱 SmartGram
+        </div>
+        <div class="navbar-menu">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar"></div>
+                <span id="userName"></span>
+            </div>
+            <button class="btn-logout" id="logoutBtn">Выйти</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="alert alert-info" id="welcomeAlert">
+            ✨ Добро пожаловать в SmartGram! Ваш аккаунт успешно создан.
+        </div>
+
+        <div class="welcome-card">
+            <div class="welcome-icon">🎉</div>
+            <h1 class="welcome-title">Добро пожаловать!</h1>
+            <p class="welcome-subtitle">Вы успешно вошли в SmartGram</p>
+            
+            <div class="user-details" id="userDetails">
+                <div class="user-detail-item">
+                    <span class="user-detail-label">ID:</span>
+                    <span class="user-detail-value" id="userId"></span>
+                </div>
+                <div class="user-detail-item">
+                    <span class="user-detail-label">Имя:</span>
+                    <span class="user-detail-value" id="userNameDetail"></span>
+                </div>
+                <div class="user-detail-item">
+                    <span class="user-detail-label">Email:</span>
+                    <span class="user-detail-value" id="userEmail"></span>
+                </div>
+                <div class="user-detail-item">
+                    <span class="user-detail-label">Роль:</span>
+                    <span class="user-detail-value" id="userRole"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3 class="card-title">Создавайте посты</h3>
+                <p class="card-description">Делитесь своими мыслями, фотографиями и видео с друзьями и подписчиками.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3 class="card-title">Находите друзей</h3>
+                <p class="card-description">Подписывайтесь на интересных людей и следите за их обновлениями.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h3 class="card-title">Общайтесь</h3>
+                <p class="card-description">Отправляйте личные сообщения и комментируйте посты ваших друзей.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔔</div>
+                <h3 class="card-title">Получайте уведомления</h3>
+                <p class="card-description">Будьте в курсе всех важных событий и новых сообщений.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3 class="card-title">Настройте профиль</h3>
+                <p class="card-description">Персонализируйте свой аккаунт и управляйте настройками приватности.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Смотрите статистику</h3>
+                <p class="card-description">Отслеживайте активность и популярность ваших публикаций.</p>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/js/dashboard.js}"></script>
+
+
+</body>
+</html>
