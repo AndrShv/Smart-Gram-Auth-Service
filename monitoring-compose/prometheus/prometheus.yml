@@ -6,9 +6,19 @@ scrape_configs:
   - job_name: 'auth-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8081']
+      - targets: ['auth-service:8081']
 
   - job_name: 'profile-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['host.docker.internal:8082']
+      - targets: ['profile-service:8082']
+
+  - job_name: 'home-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['home-service:8083']
+
+  - job_name: 'notification-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['notification-service:8084']
