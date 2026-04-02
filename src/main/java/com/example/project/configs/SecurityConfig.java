@@ -3,7 +3,6 @@ package com.example.project.configs;
 import com.example.project.filters.JwtFilter;
 import com.example.project.handlers.JwtLoginSuccessHandler;
 import com.example.project.handlers.OAuth2LoginSuccessHandler;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
@@ -11,8 +10,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -26,16 +28,26 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
+        http.csrf(csrf  -> csrf.ignoringRequestMatchers("/api/auth/register", "/api/auth/login", "/api/password/reset/**"))
                 .exceptionHandling(e -> e.authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/oauth2/**").permitAll()
-                        .requestMatchers("/css/**", "/static/**", "/images/**", "/js/**").permitAll()
+                        .requestMatchers(
+                                "/api/auth/**",
+                                "/api/password/reset/**",
+                                "/auth/**",
+                                "/oauth2/**",
+                                "/css/**",
+                                "/static/**",
+                                "/images/**",
+                                "/js/**"
+                        ).permitAll()
+                        .requestMatchers("/favicon.ico").permitAll()
+                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/api/email/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
+
                 )
                 .formLogin(form -> form
                         .loginPage("/auth/login")
@@ -59,9 +71,4 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
     }
-    @Bean
-    public MessageConverter jsonMessageConverter() {
-        return new Jackson2JsonMessageConverter();
-    }
-
 }
